@@ -1,0 +1,15 @@
+[
+    {
+        "id": 1,
+        "title": "Preliminary Round Problem Statement: AI-Enabled Smart Campus Assistant",
+        "category": "AI/ML",
+        "difficulty": "Open Innovation",
+        "description": "Design a lightweight AI-based system that improves student experience on a college campus by solving one real-world problem such as academic support, resource management, accessibility, or student engagement.",
+        "tags": [
+            "AI",
+            "Smart Campus",
+            "Education",
+            "Automation"
+        ]
+    }
+]

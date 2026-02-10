@@ -1,0 +1,37 @@
+[
+    {
+        "tier": "Title",
+        "sponsors": [
+            {
+                "name": "Google",
+                "logo": "https://placehold.co/200x100?text=Google"
+            },
+            {
+                "name": "Microsoft",
+                "logo": "https://placehold.co/200x100?text=Microsoft"
+            }
+        ]
+    },
+    {
+        "tier": "Gold",
+        "sponsors": [
+            {
+                "name": "Github",
+                "logo": "https://placehold.co/150x80?text=Github"
+            },
+            {
+                "name": "DigitalOcean",
+                "logo": "https://placehold.co/150x80?text=DigitalOcean"
+            }
+        ]
+    },
+    {
+        "tier": "Silver",
+        "sponsors": [
+            {
+                "name": "Stripe",
+                "logo": "https://placehold.co/120x60?text=Stripe"
+            }
+        ]
+    }
+]

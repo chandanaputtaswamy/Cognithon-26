@@ -1,0 +1,105 @@
+/* Main card container needs relative positioning for pseudo-elements */
+.problem-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    padding: 4px;
+    /* INCREASED from 1px to 4px for thicker border */
+}
+
+/* Rotating border effect */
+.problem-card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(transparent,
+            transparent,
+            transparent,
+            var(--color-primary));
+    animation: rotate-border 4s linear infinite;
+    z-index: -2;
+}
+
+/* Inner background */
+.problem-card::after {
+    content: "";
+    position: absolute;
+    inset: 4px;
+    /* MATCH padding */
+    background: var(--bg-card);
+    border-radius: 6px;
+    /* Slightly smaller radius for inner content */
+    z-index: -1;
+}
+
+@keyframes rotate-border {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.problem-header {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.problem-meta {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.problem-category {
+    color: var(--color-secondary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.problem-difficulty {
+    padding: 0.1rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    border: 1px solid currentColor;
+}
+
+.difficulty-Hard {
+    color: #ff4d4d;
+}
+
+.difficulty-Medium {
+    color: #ffd700;
+}
+
+.difficulty-Easy {
+    color: #00ff7f;
+}
+
+.problem-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+.problem-body {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--text-muted);
+    position: relative;
+    z-index: 1;
+}
