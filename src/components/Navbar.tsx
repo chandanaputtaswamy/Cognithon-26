@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const navigate = useNavigate();
+
 
     const toggleMenu = () => setIsOpen(!isOpen);
 
     const navLinks = [
         { title: 'Home', path: '/' },
         { title: 'About', path: '/#about' },
-        { title: 'Problems', path: '/problems' },
+        { title: 'Problems', path: '/#problems' },
         { title: 'Timeline', path: '/#timeline' },
         { title: 'Contact', path: '/contact' }
     ];
@@ -40,7 +40,7 @@ const Navbar = () => {
                             {link.title}
                         </Link>
                     ))}
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNZFuKP8oINS1_0cJqHfMweTvhHLBISr29Hd3Vhr1pSK-8hQ/viewform" className="register-btn">
+                    <a href="https://forms.gle/3afJzo9aP6hxweyZ8" className="register-btn" target="_blank" rel="noopener noreferrer">
                         Register Now
                     </a>
                 </div>
@@ -73,7 +73,7 @@ const Navbar = () => {
                                 {link.title}
                             </Link>
                         ))}
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdNZFuKP8oINS1_0cJqHfMweTvhHLBISr29Hd3Vhr1pSK-8hQ/viewform" className="register-btn" onClick={toggleMenu} style={{ width: '100%', textAlign: 'center', display: 'block' }}>
+                        <a href="https://forms.gle/3afJzo9aP6hxweyZ8" className="register-btn" onClick={toggleMenu} style={{ width: '100%', textAlign: 'center', display: 'block' }} target="_blank" rel="noopener noreferrer">
                             Register Now
                         </a>
                     </motion.div>

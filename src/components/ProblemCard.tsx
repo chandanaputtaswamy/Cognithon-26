@@ -28,9 +28,19 @@ const ProblemCard = ({ problem }: { problem: Problem }) => {
             </div>
 
             <div style={{ overflow: 'hidden' }}>
-                <p style={{ color: 'var(--text-muted)', marginBottom: '1rem', lineHeight: '1.6' }}>
+                <p style={{ color: 'var(--text-muted)', marginBottom: '1rem', lineHeight: '1.6', paddingLeft: '1rem' }}>
                     {problem.description}
                 </p>
+
+                <div style={{ marginTop: '2rem', paddingLeft: '2rem', paddingBottom: '2rem' }}>
+                    <h4 style={{ color: 'var(--color-primary)', marginBottom: '1rem', fontSize: '1.2rem' }}>Core Requirements:</h4>
+                    <ul style={{ listStyle: 'disc', paddingLeft: '1.5rem', color: 'var(--text-muted)', lineHeight: '1.8' }}>
+                        <li>Clearly define the problem and its users.</li>
+                        <li>Propose a technical solution using AI, data science, or automation.</li>
+                        <li>Include system architecture, tools/technologies, and feasibility.</li>
+                        <li>Show innovation, practicality, and impact.</li>
+                    </ul>
+                </div>
             </div>
         </motion.div>
     );

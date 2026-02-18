@@ -15,7 +15,7 @@ const Footer = () => {
                     <ul>
                         <li><a href="/#about">About</a></li>
                         <li><a href="/problems">Problem Statements</a></li>
-                        <li><a href="/register">Register</a></li>
+                        <li><a href="https://forms.gle/3afJzo9aP6hxweyZ8" target="_blank" rel="noopener noreferrer">Register</a></li>
                     </ul>
                 </div>
 

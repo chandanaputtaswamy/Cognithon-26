@@ -1,37 +1,16 @@
 [
     {
-        "tier": "Title",
-        "sponsors": [
-            {
-                "name": "Google",
-                "logo": "https://placehold.co/200x100?text=Google"
-            },
-            {
-                "name": "Microsoft",
-                "logo": "https://placehold.co/200x100?text=Microsoft"
-            }
-        ]
+        "id": "avinya",
+        "name": "Avinya Techknows",
+        "url": "https://avinyatechknows.com/",
+        "description": "Innovating with AI, Cloud, and Full-Stack solutions to build future-ready digital ecosystems.",
+        "isPlaceholder": false
     },
     {
-        "tier": "Gold",
-        "sponsors": [
-            {
-                "name": "Github",
-                "logo": "https://placehold.co/150x80?text=Github"
-            },
-            {
-                "name": "DigitalOcean",
-                "logo": "https://placehold.co/150x80?text=DigitalOcean"
-            }
-        ]
-    },
-    {
-        "tier": "Silver",
-        "sponsors": [
-            {
-                "name": "Stripe",
-                "logo": "https://placehold.co/120x60?text=Stripe"
-            }
-        ]
+        "id": "mtdn",
+        "name": "MTDN",
+        "url": "https://www.mtdn.co.in/",
+        "description": "Transforming careers through top-tier corporate training and software development. 'Good Content, Better Delivery and Best Outcome!'",
+        "isPlaceholder": false
     }
 ]

@@ -20,8 +20,7 @@ const Hero = () => {
                     transition={{ duration: 0.8 }}
                     className="hero-inner"
                 >
-                    <span className="hero-badge">April 7th and 8th - GSSSIETW, Mysuru</span>
-
+                    <span className="hero-badge">April 10th and 11th - GSSSIETW, Mysuru</span>
                     <div className="hero-main-title-group">
                         <img src="/favicon.png" alt="Cognithon Logo" className="hero-logo-large" />
                         <h1
@@ -45,12 +44,14 @@ const Hero = () => {
 
                     <div className="hero-cta">
                         <a
-                            href="https://docs.google.com/forms/d/e/1FAIpQLSdNZFuKP8oINS1_0cJqHfMweTvhHLBISr29Hd3Vhr1pSK-8hQ/viewform"
+                            href="https://forms.gle/3afJzo9aP6hxweyZ8"
                             className="btn btn-primary"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             Register Now
                         </a>
-                        <Link to="/problems" className="btn btn-outline">View Problem Statements</Link>
+                        <Link to="/#problems" className="btn btn-outline">View Problem Statements</Link>
                     </div>
                 </motion.div>
             </div>
