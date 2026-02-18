@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, type FormEvent } from 'react';
 import Section from '../components/Section';
 import { FaEnvelope, FaMapMarkerAlt, FaGlobe } from 'react-icons/fa';
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         alert('Message sent! (Demo)');
     };
