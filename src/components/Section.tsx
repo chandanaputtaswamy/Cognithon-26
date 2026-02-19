@@ -16,10 +16,10 @@ const Section = ({ id, title, subtitle, children, className = '' }: SectionProps
             <div className="section-content">
                 {(title || subtitle) && (
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 0, y: 15 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5 }}
+                        viewport={{ once: false, margin: "-50px" }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
                         className="section-header"
                     >
                         {title && <h2 className="section-title">{title}</h2>}
@@ -27,10 +27,10 @@ const Section = ({ id, title, subtitle, children, className = '' }: SectionProps
                     </motion.div>
                 )}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
+                    viewport={{ once: false, margin: "-50px" }}
+                    transition={{ duration: 0.8, delay: 0.1, ease: "easeOut" }}
                 >
                     {children}
                 </motion.div>
