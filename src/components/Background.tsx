@@ -74,7 +74,7 @@ const Background: React.FC = () => {
                 0,
                 currentMouseRef.current.x,
                 currentMouseRef.current.y,
-                600
+                1200
             );
             gradient.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
             gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
