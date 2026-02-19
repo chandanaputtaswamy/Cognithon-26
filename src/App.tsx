@@ -7,10 +7,13 @@ import ProblemStatements from './pages/ProblemStatements';
 import Contact from './pages/Contact';
 import ScrollToHash from './components/ScrollToHash';
 
+import Background from './components/Background';
+
 function App() {
   return (
     <Router>
       <ScrollToHash />
+      <Background />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main style={{ flex: 1 }}>

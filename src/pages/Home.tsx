@@ -77,6 +77,11 @@ const Home = () => {
                 </div>
             </Section>
 
+
+            <Section id="faq" title="Frequently Asked Questions" subtitle="COMMON QUESTIONS">
+                <FAQ />
+            </Section>
+
             <div style={{ textAlign: 'center', marginBottom: '2rem', marginTop: '4rem' }}>
                 <h3 style={{
                     fontSize: '1.8rem',
@@ -105,9 +110,6 @@ const Home = () => {
                     margin: '0 auto'
                 }}></div>
             </div>
-            <Section id="faq" title="FAQ" subtitle="COMMON QUESTIONS">
-                <FAQ />
-            </Section>
 
             <Sponsors />
 
