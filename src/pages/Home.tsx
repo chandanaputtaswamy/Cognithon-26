@@ -8,6 +8,7 @@ import eventsData from '../data/events.json';
 import problemsData from '../data/problemStatements.json';
 
 import Sponsors from '../components/Sponsors';
+import Coordinators from '../components/Coordinators';
 import FAQ from '../components/FAQ';
 
 const Home = () => {
@@ -62,10 +63,6 @@ const Home = () => {
                 </div>
             </Section>
 
-            <Section id="timeline" title="Schedule">
-                <Timeline events={eventsData.timeline} />
-            </Section>
-
             <Section id="problems" title="Featured Problem" subtitle="SOLVE REAL WORLD CHALLENGES">
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     {problemsData.map((problem) => (
@@ -75,6 +72,10 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
+            </Section>
+
+            <Section id="timeline" title="Schedule">
+                <Timeline events={eventsData.timeline} />
             </Section>
 
 
@@ -222,6 +223,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </Section>
+
+            <Section id="team" title="Meet the Team" subtitle="THE MINDS BEHIND COGNITHON">
+                <Coordinators />
             </Section>
 
 

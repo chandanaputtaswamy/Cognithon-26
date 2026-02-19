@@ -1,0 +1,109 @@
+.coordinators-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.coordinators-section {
+    margin-bottom: 4rem;
+}
+
+.coordinators-subtitle {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    background: linear-gradient(90deg, #fff, var(--color-primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+
+.coordinators-grid {
+    display: grid;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.faculty-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 350px));
+}
+
+.student-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+}
+
+.coordinator-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.coordinator-card:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+.coordinator-image-container {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid rgba(0, 243, 255, 0.3);
+    padding: 3px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.coordinator-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.coordinator-name {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.coordinator-role {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.coordinator-phone {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-family: 'Outfit', sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .coordinators-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .coordinator-card {
+        padding: 1.5rem;
+    }
+
+    .coordinator-image-container {
+        width: 100px;
+        height: 100px;
+    }
+}
