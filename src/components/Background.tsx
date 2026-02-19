@@ -3,8 +3,9 @@ import './Background.css';
 
 const Background: React.FC = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const mouseRef = useRef({ x: 0, y: 0 });
-    const currentMouseRef = useRef({ x: 0, y: 0 });
+    // Initialize light at center of screen
+    const mouseRef = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
+    const currentMouseRef = useRef({ x: window.innerWidth / 2, y: window.innerHeight / 2 });
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -119,12 +120,20 @@ const Background: React.FC = () => {
             mouseRef.current = { x: e.clientX, y: e.clientY };
         };
 
+        const handleTouchMove = (e: TouchEvent) => {
+            if (e.touches.length > 0) {
+                mouseRef.current = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+            }
+        };
+
         window.addEventListener('resize', handleResize);
         window.addEventListener('mousemove', handleMouseMove);
+        window.addEventListener('touchmove', handleTouchMove);
 
         return () => {
             window.removeEventListener('resize', handleResize);
             window.removeEventListener('mousemove', handleMouseMove);
+            window.removeEventListener('touchmove', handleTouchMove);
         };
     }, []);
 
