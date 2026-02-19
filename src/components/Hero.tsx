@@ -32,7 +32,7 @@ const Hero = () => {
                     </div>
 
                     <h2 className="hero-subtitle-main">
-                        From Code to <span className="text-gradient">cognithon</span>
+                        From Code to <span className="text-gradient">Cognition</span>
                     </h2>
 
                     <h3 className="hero-tagline-small">BUILD THE UNIMAGINABLE</h3>

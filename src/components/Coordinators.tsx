@@ -107,7 +107,10 @@ const Coordinators = () => {
             </div>
 
             <div className="coordinators-section">
-                <h3 className="coordinators-subtitle">Student Coordinators</h3>
+                <div className="section-header" style={{ marginBottom: '3rem', marginTop: '1rem' }}>
+                    <h2 className="section-title">Meet the Team</h2>
+                    <p className="section-subtitle">THE MINDS BEHIND COGNITHON</p>
+                </div>
                 <div className="coordinators-grid student-grid">
                     {studentCoordinators.map(coordinator => (
                         <CoordinatorCard key={coordinator.id} coordinator={coordinator} />

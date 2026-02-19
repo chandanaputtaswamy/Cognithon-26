@@ -12,14 +12,26 @@
 .coordinators-subtitle {
     text-align: center;
     font-family: 'Outfit', sans-serif;
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     font-weight: 600;
-    margin-bottom: 2rem;
-    background: linear-gradient(90deg, #fff, var(--color-primary));
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
+    margin-bottom: 3rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.coordinators-subtitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+    border-radius: 2px;
 }
 
 .coordinators-grid {
