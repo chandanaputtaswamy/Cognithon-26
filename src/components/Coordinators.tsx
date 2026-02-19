@@ -89,7 +89,7 @@ const CoordinatorCard = ({ coordinator }: { coordinator: Coordinator }) => (
         <div className="coordinator-info">
             <h3 className="coordinator-name">{coordinator.name}</h3>
             <p className="coordinator-role">{coordinator.role}</p>
-            <p className="coordinator-phone">{coordinator.phone}</p>
+            <a href={`tel:${coordinator.phone}`} className="coordinator-phone">{coordinator.phone}</a>
         </div>
     </motion.div>
 );

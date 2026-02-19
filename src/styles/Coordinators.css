@@ -90,6 +90,13 @@
     font-size: 0.95rem;
     color: var(--text-muted);
     font-family: 'Outfit', sans-serif;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.coordinator-phone:hover {
+    color: var(--color-primary);
 }
 
 /* Responsive */
