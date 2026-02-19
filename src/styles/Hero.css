@@ -50,6 +50,7 @@
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 2rem;
+    margin-top: 4rem;
     background: transparent;
     /* Transparent to let pseudo elements show */
     overflow: hidden;

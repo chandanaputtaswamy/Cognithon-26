@@ -8,6 +8,7 @@ import eventsData from '../data/events.json';
 import problemsData from '../data/problemStatements.json';
 
 import Sponsors from '../components/Sponsors';
+import FAQ from '../components/FAQ';
 
 const Home = () => {
     return (
@@ -104,6 +105,10 @@ const Home = () => {
                     margin: '0 auto'
                 }}></div>
             </div>
+            <Section id="faq" title="FAQ" subtitle="COMMON QUESTIONS">
+                <FAQ />
+            </Section>
+
             <Sponsors />
 
 
