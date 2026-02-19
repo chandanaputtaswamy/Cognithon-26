@@ -1,0 +1,59 @@
+.guidelines-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.guidelines-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.guideline-item {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 243, 255, 0.15);
+    padding: 1.5rem;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.guideline-item:hover {
+    background: linear-gradient(145deg, rgba(0, 243, 255, 0.1), rgba(0, 243, 255, 0.02));
+    border-color: rgba(0, 243, 255, 0.5);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 40px -10px rgba(0, 243, 255, 0.3);
+}
+
+.guideline-icon {
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.5));
+}
+
+.guideline-text {
+    font-family: 'Outfit', sans-serif;
+    color: #e0e0e0;
+    font-size: 1.15rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .guideline-item {
+        padding: 1rem;
+    }
+
+    .guideline-text {
+        font-size: 1rem;
+    }
+}

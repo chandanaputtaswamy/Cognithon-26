@@ -9,6 +9,7 @@ import problemsData from '../data/problemStatements.json';
 
 import Sponsors from '../components/Sponsors';
 import Coordinators from '../components/Coordinators';
+import Guidelines from '../components/Guidelines';
 import FAQ from '../components/FAQ';
 
 const Home = () => {
@@ -72,6 +73,10 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
+            </Section>
+
+            <Section id="guidelines" title="Hackathon Guidelines" subtitle="RULES & REGULATIONS">
+                <Guidelines />
             </Section>
 
             <Section id="timeline" title="Schedule">
