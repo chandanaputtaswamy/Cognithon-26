@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
 import '../styles/Coordinators.css';
 
+import ashaImg from '../assets/asha.jpeg';
+import bharthiImg from '../assets/bharthi.jpeg';
+
 interface Coordinator {
     id: number;
     name: string;
@@ -12,17 +15,17 @@ interface Coordinator {
 const facultyCoordinators: Coordinator[] = [
     {
         id: 1,
-        name: "Faculty Name 1",
-        role: "Faculty Coordinator",
-        image: "https://via.placeholder.com/150",
-        phone: "+91 99999 99999"
+        name: "Dr. Asha M",
+        role: "Associate Professor, Dept. of AI&DS, GSSSIETW, Mysuru.",
+        image: ashaImg,
+        phone: "+91 9886135756"
     },
     {
         id: 2,
-        name: "Faculty Name 2",
-        role: "Faculty Coordinator",
-        image: "https://via.placeholder.com/150",
-        phone: "+91 88888 88888"
+        name: "Dr. Bharathi R",
+        role: "Assistant Professor,  Dept. of AI&DS, GSSSIETW, Mysuru.",
+        image: bharthiImg,
+        phone: "+91 9986955155"
     }
 ];
 
