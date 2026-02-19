@@ -1,67 +1,206 @@
-.timeline {
+/* --- Roadmap Container --- */
+.timeline-roadmap {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
-    padding: 2rem 0;
+    padding: 6rem 0;
+    overflow: hidden;
+    /* Optional: If the parent section isn't dark enough, we can add a background here */
 }
 
-.timeline::before {
-    content: '';
+/* Ensure SVG is behind */
+.roadmap-svg {
     position: absolute;
     top: 0;
-    bottom: 0;
-    left: 20px;
-    width: 2px;
-    background: rgba(255, 255, 255, 0.1);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
 }
 
-.timeline-item {
+.roadmap-item {
     position: relative;
-    margin-bottom: 2rem;
-    padding-left: 50px;
-}
-
-.timeline-dot {
-    position: absolute;
-    left: 11px;
-    top: 5px;
-    width: 20px;
-    height: 20px;
-    background: var(--bg-dark);
-    border: 2px solid var(--color-primary);
-    border-radius: 50%;
+    width: 50%;
+    box-sizing: border-box;
+    height: 300px;
+    /* Match TSX itemHeight */
+    display: flex;
+    align-items: center;
     z-index: 1;
-    transition: all 0.3s ease;
 }
 
-.timeline-item:hover .timeline-dot {
-    background: var(--color-primary);
-    box-shadow: 0 0 10px var(--color-primary);
+/* Left Items */
+.roadmap-item.left {
+    left: 0;
+    justify-content: flex-end;
+    padding-right: 100px;
+    /* Distance from center/road */
 }
 
-.timeline-content {
-    background: var(--bg-card);
-    padding: 1.5rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease;
+/* Right Items */
+.roadmap-item.right {
+    left: 50%;
+    justify-content: flex-start;
+    padding-left: 100px;
+    /* Distance from center/road */
 }
 
-.timeline-item:hover .timeline-content {
-    transform: translateX(5px);
-    border-color: var(--color-primary);
+
+/* --- MARKERS (Gold Glow) --- */
+.roadmap-marker-wrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    /* Position needs to match SVG peaks */
+    /* Left Peak is at X=200px (Relative to 1000px container) */
+    /* Right Peak is at X=800px (Relative to 1000px container) */
 }
 
-.timeline-time {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--color-secondary);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+/* Left Item (wrapper is inside left 50%) -> Needs to be at X=200 */
+/* .left is 0-500px. X=200 is 200px from left. */
+.roadmap-item.left .roadmap-marker-wrapper {
+    left: 200px;
 }
 
-.timeline-event {
-    font-size: 1.2rem;
+/* Right Item (wrapper is inside right 50%) -> Needs to be at X=800 */
+/* .right is 500-1000px. X=800 is 300px from left of this container. */
+.roadmap-item.right .roadmap-marker-wrapper {
+    left: 300px;
+}
+
+.roadmap-marker {
+    width: 60px;
+    height: 60px;
+    background: #0f172a;
+    /* Dark Navy Background */
+    border: 3px solid #facc15;
+    /* Gold Border */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 20px rgba(250, 204, 21, 0.4);
+    /* Gold Glow */
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 10;
+}
+
+.marker-icon {
+    font-size: 1.8rem;
+    filter: drop-shadow(0 0 5px rgba(250, 204, 21, 0.6));
+}
+
+.roadmap-item:hover .roadmap-marker {
+    transform: scale(1.2);
+    box-shadow: 0 0 35px rgba(250, 204, 21, 0.7);
+    background: #facc15;
+}
+
+.roadmap-item:hover .marker-icon {
+    filter: none;
+    /* simple emoji */
+}
+
+
+/* --- CONTENT CARDS (Minimal & Premium) --- */
+.roadmap-content {
+    background: rgba(30, 41, 59, 0.7);
+    /* Dark Slate, High Transparency */
+    padding: 1px;
+    /* Border Wrapper */
+    border-radius: 16px;
+    /* Gradient Border Trick */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    max-width: 350px;
+    width: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-inner {
+    background: #0f172a;
+    /* Inner Dark Bg */
+    padding: 1.5rem 2rem;
+    border-radius: 15px;
+    height: 100%;
+}
+
+.roadmap-title {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(90deg, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.roadmap-desc {
+    color: #94a3b8;
+    /* Soft Grey */
+    font-size: 1rem;
     margin: 0;
-    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.roadmap-item:hover .roadmap-content {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.roadmap-item:hover .roadmap-title {
+    background: linear-gradient(90deg, #facc15, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 768px) {
+    .timeline-roadmap {
+        padding: 4rem 1rem;
+    }
+
+    .roadmap-svg {
+        display: none;
+    }
+
+    .roadmap-item {
+        width: 100%;
+        left: 0 !important;
+        height: auto;
+        padding: 0 0 3rem 80px !important;
+        /* Left padding for vertical line */
+        justify-content: flex-start !important;
+
+        /* Simple Vertical Line */
+        border-left: 2px dashed rgba(255, 255, 255, 0.1);
+        margin-left: 20px;
+    }
+
+    .roadmap-marker-wrapper {
+        left: -31px !important;
+        /* Center on border line (border is at 0, padding is 80) */
+        /* Wait, if item has margin-left 20px, and border-left... 
+           Let's just position absolute relative to item */
+        width: 60px;
+        top: 0 !important;
+        transform: none !important;
+    }
+
+    /* Re-align marker wrapper to be on the left line */
+    .roadmap-item .roadmap-marker-wrapper {
+        left: -31px !important;
+    }
+
+    .roadmap-content {
+        max-width: 100%;
+    }
+
+    .roadmap-title {
+        font-size: 1.3rem;
+    }
 }
