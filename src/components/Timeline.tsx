@@ -7,7 +7,6 @@ interface TimelineEvent {
     icon: string;
 }
 
-<<<<<<< HEAD
 interface TimelineProps {
     events?: {
         time: string;
@@ -16,18 +15,6 @@ interface TimelineProps {
 }
 
 const defaultRoadmapData: TimelineEvent[] = [
-=======
-interface EventData {
-    time: string;
-    event: string;
-}
-
-interface TimelineProps {
-    events?: EventData[];
-}
-
-const defaultRoadmap: TimelineEvent[] = [
->>>>>>> 7c3dc4d33e10e632f4635f64dcbdbbd54c213ba5
     { title: "Registrations Open", description: "Register your team and start your journey.", icon: "📝" },
     { title: "Idea Submission", description: "Submit your innovative solutions.", icon: "💡" },
     { title: "Shortlisting", description: "Top teams selected for the finale.", icon: "✅" },
@@ -36,7 +23,6 @@ const defaultRoadmap: TimelineEvent[] = [
     { title: "Judging & Results", description: "Pitch to judges and win big.", icon: "🏆" }
 ];
 
-<<<<<<< HEAD
 const icons = ["📝", "💡", "✅", "👨‍🏫", "🚀", "🏆", "🕒", "📅", "🍴"];
 
 const Timeline = ({ events }: TimelineProps) => {
@@ -47,16 +33,6 @@ const Timeline = ({ events }: TimelineProps) => {
             icon: icons[i % icons.length]
         }))
         : defaultRoadmapData;
-=======
-const Timeline = ({ events }: TimelineProps) => {
-    const roadmapData: TimelineEvent[] = events
-        ? events.map(e => ({
-            title: e.event,
-            description: e.time,
-            icon: "🗓️" // Default icon for schedule events
-        }))
-        : defaultRoadmap;
->>>>>>> 7c3dc4d33e10e632f4635f64dcbdbbd54c213ba5
 
     const itemHeight = 300; // Increased height for better spacing
     const totalHeight = (data.length * itemHeight) + 100;
