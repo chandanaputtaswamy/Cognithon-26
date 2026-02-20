@@ -4,7 +4,7 @@ import '../styles/Section.css';
 const Register = () => {
     return (
         <div style={{ paddingTop: '60px', minHeight: '80vh' }}>
-            <Section title="Register for Cognithon '26">
+            <Section title="Register for Cognithon-26">
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',

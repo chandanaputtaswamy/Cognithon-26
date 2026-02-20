@@ -27,7 +27,7 @@ const Home = () => {
                             backgroundClip: 'text',
                             WebkitTextFillColor: 'transparent',
                             color: 'transparent'
-                        }}>Cognithon 26</span>
+                        }}>Cognithon-26</span>
                     </span>
                 }
                 subtitle="THE VISION"

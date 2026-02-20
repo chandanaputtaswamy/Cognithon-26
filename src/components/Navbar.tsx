@@ -39,7 +39,7 @@ const Navbar = () => {
             <div className="navbar-container">
                 <Link to="/" className="logo">
                     <img src="/favicon.png" alt="Cognithon Logo" className="nav-logo-img" />
-                    COGNITHON<span>'26</span>
+                    COGNITHON<span>-26</span>
                 </Link>
 
                 {/* Desktop Links */}
