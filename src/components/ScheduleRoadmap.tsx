@@ -64,14 +64,14 @@ const ScheduleRoadmap = () => {
     const generatePath = () => {
         const sortedPoints = [...milestones].sort((a, b) => a.x - b.x);
         const startX = 0;
-        const startY = 300;
+        const startY = 200;
 
         // Use a simple straight zigzag path. 
         // CSS stroke-linejoin: round will make the corners 'lil smooth'.
         let path = `M ${startX} ${startY}`;
 
         sortedPoints.forEach(p => {
-            path += ` L ${p.x * 12} ${p.y * 6}`;
+            path += ` L ${p.x * 12} ${p.y * 5}`;
         });
 
         path += ` L 1200 ${startY}`;
