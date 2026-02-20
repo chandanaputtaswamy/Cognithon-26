@@ -7,7 +7,16 @@ interface TimelineEvent {
     icon: string;
 }
 
-const roadmapData: TimelineEvent[] = [
+interface EventData {
+    time: string;
+    event: string;
+}
+
+interface TimelineProps {
+    events?: EventData[];
+}
+
+const defaultRoadmap: TimelineEvent[] = [
     { title: "Registrations Open", description: "Register your team and start your journey.", icon: "📝" },
     { title: "Idea Submission", description: "Submit your innovative solutions.", icon: "💡" },
     { title: "Shortlisting", description: "Top teams selected for the finale.", icon: "✅" },
@@ -16,7 +25,15 @@ const roadmapData: TimelineEvent[] = [
     { title: "Judging & Results", description: "Pitch to judges and win big.", icon: "🏆" }
 ];
 
-const Timeline = () => {
+const Timeline = ({ events }: TimelineProps) => {
+    const roadmapData: TimelineEvent[] = events
+        ? events.map(e => ({
+            title: e.event,
+            description: e.time,
+            icon: "🗓️" // Default icon for schedule events
+        }))
+        : defaultRoadmap;
+
     const itemHeight = 300; // Increased height for better spacing
     const totalHeight = (roadmapData.length * itemHeight) + 100;
 
