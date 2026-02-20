@@ -4,7 +4,7 @@ import '../styles/Coordinators.css';
 import ashaImg from '../assets/asha.jpeg';
 import bharthiImg from '../assets/bharthi.jpeg';
 
-import { FaLinkedin } from 'react-icons/fa';
+
 
 interface Coordinator {
     id: number;
@@ -95,20 +95,9 @@ const CoordinatorCard = ({ coordinator }: { coordinator: Coordinator }) => (
         <div className="coordinator-image-container">
             <img src={coordinator.image} alt={coordinator.name} className="coordinator-image" />
         </div>
-        {coordinator.linkedin && (
-            <a
-                href={coordinator.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="coordinator-linkedin-link"
-            >
-                <FaLinkedin />
-            </a>
-        )}
         <div className="coordinator-info">
             <h3 className="coordinator-name">{coordinator.name}</h3>
             <p className="coordinator-role">{coordinator.role}</p>
-            <a href={`tel:${coordinator.phone}`} className="coordinator-phone">{coordinator.phone}</a>
         </div>
     </motion.div>
 );
