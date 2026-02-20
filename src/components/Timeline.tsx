@@ -68,25 +68,33 @@ const Timeline = ({ events }: TimelineProps) => {
                 </defs>
 
                 {/* The Road (Thick Dark Path) */}
-                <path
+                <motion.path
                     d={generatePath()}
-                    stroke="#1e293b"
+                    stroke="url(#goldGradient)"
                     strokeWidth="50"
                     fill="none"
                     strokeLinecap="round"
                     filter="url(#roadShadow)"
                     className="path-road"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    whileInView={{ pathLength: 1, opacity: 1 }}
+                    transition={{ duration: 2, ease: "easeInOut" }}
+                    viewport={{ once: true }}
                 />
 
                 {/* Center Line (Subtle) */}
-                <path
+                <motion.path
                     d={generatePath()}
-                    stroke="rgba(255,255,255,0.1)"
+                    stroke="rgba(255,255,255,0.4)"
                     strokeWidth="2"
                     fill="none"
                     strokeDasharray="15 15"
                     strokeLinecap="round"
                     className="path-line-center"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    whileInView={{ pathLength: 1, opacity: 0.6 }}
+                    transition={{ duration: 2, ease: "easeInOut", delay: 0.5 }}
+                    viewport={{ once: true }}
                 />
             </svg>
 
