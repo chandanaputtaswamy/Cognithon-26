@@ -70,7 +70,7 @@ const Timeline = ({ events }: TimelineProps) => {
                 {/* The Road (Thick Dark Path) */}
                 <motion.path
                     d={generatePath()}
-                    stroke="url(#goldGradient)"
+                    stroke="#1e293b"
                     strokeWidth="50"
                     fill="none"
                     strokeLinecap="round"
@@ -85,7 +85,7 @@ const Timeline = ({ events }: TimelineProps) => {
                 {/* Center Line (Subtle) */}
                 <motion.path
                     d={generatePath()}
-                    stroke="rgba(255,255,255,0.4)"
+                    stroke="rgba(255,255,255,0.1)"
                     strokeWidth="2"
                     fill="none"
                     strokeDasharray="15 15"
