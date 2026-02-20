@@ -30,8 +30,7 @@ const Navbar = () => {
         { title: 'About', path: '/#about' },
         { title: 'Problems', path: '/#problems' },
         { title: 'Timeline', path: '/#schedule' },
-        { title: 'FAQ', path: '/#faq' },
-        { title: 'Contact', path: '/#contact' }
+        { title: 'FAQ', path: '/#faq' }
     ];
 
     return (

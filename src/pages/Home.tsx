@@ -12,7 +12,6 @@ import Sponsors from '../components/Sponsors';
 import Coordinators from '../components/Coordinators';
 import Guidelines from '../components/Guidelines';
 import FAQ from '../components/FAQ';
-import ContactSection from '../components/ContactSection';
 
 const Home = () => {
     return (
@@ -233,8 +232,6 @@ const Home = () => {
             <Section id="team" title="Meet the Team" subtitle="THE MINDS BEHIND COGNITHON">
                 <Coordinators />
             </Section>
-
-            <ContactSection />
         </div>
     );
 };
