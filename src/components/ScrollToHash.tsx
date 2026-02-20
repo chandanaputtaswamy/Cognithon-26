@@ -6,10 +6,13 @@ const ScrollToHash = () => {
 
     useEffect(() => {
         if (hash) {
-            const element = document.getElementById(hash.replace("#", ""));
+            const id = hash.replace("#", "");
+            const element = document.getElementById(id);
             if (element) {
                 element.scrollIntoView({ behavior: "smooth", block: "start" });
             }
+        } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     }, [hash]);
 
