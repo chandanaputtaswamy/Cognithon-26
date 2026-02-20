@@ -7,7 +7,14 @@ interface TimelineEvent {
     icon: string;
 }
 
-const roadmapData: TimelineEvent[] = [
+interface TimelineProps {
+    events?: {
+        time: string;
+        event: string;
+    }[];
+}
+
+const defaultRoadmapData: TimelineEvent[] = [
     { title: "Registrations Open", description: "Register your team and start your journey.", icon: "📝" },
     { title: "Idea Submission", description: "Submit your innovative solutions.", icon: "💡" },
     { title: "Shortlisting", description: "Top teams selected for the finale.", icon: "✅" },
@@ -16,13 +23,23 @@ const roadmapData: TimelineEvent[] = [
     { title: "Judging & Results", description: "Pitch to judges and win big.", icon: "🏆" }
 ];
 
-const Timeline = () => {
+const icons = ["📝", "💡", "✅", "👨‍🏫", "🚀", "🏆", "🕒", "📅", "🍴"];
+
+const Timeline = ({ events }: TimelineProps) => {
+    const data: TimelineEvent[] = events
+        ? events.map((e, i) => ({
+            title: e.time,
+            description: e.event,
+            icon: icons[i % icons.length]
+        }))
+        : defaultRoadmapData;
+
     const itemHeight = 300; // Increased height for better spacing
-    const totalHeight = (roadmapData.length * itemHeight) + 100;
+    const totalHeight = (data.length * itemHeight) + 100;
 
     const generatePath = () => {
         let d = `M 500 0`;
-        roadmapData.forEach((_, index) => {
+        data.forEach((_, index) => {
             const yStart = index * itemHeight;
             const yEnd = (index + 1) * itemHeight;
             const peakX = index % 2 === 0 ? 800 : 200;
@@ -73,7 +90,7 @@ const Timeline = () => {
                 />
             </svg>
 
-            {roadmapData.map((item, index) => (
+            {data.map((item, index) => (
                 <motion.div
                     key={index}
                     className={`roadmap-item ${index % 2 === 0 ? 'left' : 'right'}`}
