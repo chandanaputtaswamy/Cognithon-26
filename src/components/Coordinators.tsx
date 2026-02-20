@@ -4,12 +4,15 @@ import '../styles/Coordinators.css';
 import ashaImg from '../assets/asha.jpeg';
 import bharthiImg from '../assets/bharthi.jpeg';
 
+import { FaLinkedin } from 'react-icons/fa';
+
 interface Coordinator {
     id: number;
     name: string;
     role: string;
     image: string;
     phone: string;
+    linkedin?: string;
 }
 
 const facultyCoordinators: Coordinator[] = [
@@ -32,45 +35,51 @@ const facultyCoordinators: Coordinator[] = [
 const studentCoordinators: Coordinator[] = [
     {
         id: 1,
-        name: "Student Name 1",
-        role: "Student Coordinator",
+        name: "Abhigna Shankar",
+        role: "Marketing and Design Crew",
         image: "https://via.placeholder.com/150",
-        phone: "+91 77777 77777"
+        phone: "+91 93539 04413",
+        linkedin: "https://www.linkedin.com/in/abhigna-shankar-6610812a3/"
     },
     {
         id: 2,
-        name: "Student Name 2",
-        role: "Student Coordinator",
+        name: "Ananya S",
+        role: "Technical Crew",
         image: "https://via.placeholder.com/150",
-        phone: "+91 66666 66666"
+        phone: "+91 76767 79427",
+        linkedin: "https://www.linkedin.com/in/ananya-s-bb87482a2/"
     },
     {
         id: 3,
-        name: "Student Name 3",
-        role: "Student Coordinator",
+        name: "Chandana P",
+        role: "Technical Crew",
         image: "https://via.placeholder.com/150",
-        phone: "+91 55555 55555"
+        phone: "9535580546",
+        linkedin: "https://www.linkedin.com/in/chandana-puttaswamy/"
     },
     {
         id: 4,
-        name: "Student Name 4",
-        role: "Student Coordinator",
+        name: "Chinmaya",
+        role: "Technical Crew",
         image: "https://via.placeholder.com/150",
-        phone: "+91 44444 44444"
+        phone: "+91 84310 27914",
+        linkedin: "https://www.linkedin.com/in/chinmaya-bhagya-2a42392a3/"
     },
     {
         id: 5,
-        name: "Student Name 5",
-        role: "Student Coordinator",
+        name: "Rachana S Jadhav",
+        role: "Marketing and Design Crew",
         image: "https://via.placeholder.com/150",
-        phone: "+91 33333 33333"
+        phone: "+91 93538 31153",
+        linkedin: "https://www.linkedin.com/in/rachana-s-jadhav-819a55291/"
     },
     {
         id: 6,
-        name: "Student Name 6",
-        role: "Student Coordinator",
+        name: "Shivani K S",
+        role: "Marketing and Design Crew",
         image: "https://via.placeholder.com/150",
-        phone: "+91 22222 22222"
+        phone: "+91 831 058 8558",
+        linkedin: "https://www.linkedin.com/in/shivani-k-s-2832392a3/"
     }
 ];
 
@@ -86,6 +95,16 @@ const CoordinatorCard = ({ coordinator }: { coordinator: Coordinator }) => (
         <div className="coordinator-image-container">
             <img src={coordinator.image} alt={coordinator.name} className="coordinator-image" />
         </div>
+        {coordinator.linkedin && (
+            <a
+                href={coordinator.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="coordinator-linkedin-link"
+            >
+                <FaLinkedin />
+            </a>
+        )}
         <div className="coordinator-info">
             <h3 className="coordinator-name">{coordinator.name}</h3>
             <p className="coordinator-role">{coordinator.role}</p>

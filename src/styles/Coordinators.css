@@ -52,10 +52,14 @@
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 16px;
-    padding: 2rem;
+    padding: 2.5rem 2rem;
     text-align: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(5px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .coordinator-card:hover {
@@ -109,6 +113,36 @@
 
 .coordinator-phone:hover {
     color: var(--color-primary);
+}
+
+.coordinator-linkedin-link {
+    position: absolute;
+    top: 100px;
+    /* Positioned relative to the image container */
+    right: 50%;
+    margin-right: -60px;
+    /* Offset to place it on the circle edge */
+    background: var(--color-primary);
+    color: #000;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #000;
+    z-index: 5;
+    text-decoration: none;
+}
+
+.coordinator-linkedin-link:hover {
+    transform: scale(1.1);
+    background: #fff;
+    color: #0077b5;
+    /* LinkedIn Color */
+    box-shadow: 0 0 15px var(--color-primary);
 }
 
 /* Responsive */
