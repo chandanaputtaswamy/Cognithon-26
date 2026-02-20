@@ -139,6 +139,18 @@
     -webkit-text-fill-color: transparent;
 }
 
+.roadmap-title {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    background: linear-gradient(90deg, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .roadmap-desc {
     color: #94a3b8;
     /* Soft Grey */
@@ -160,49 +172,80 @@
 }
 
 
-/* --- MOBILE RESPONSIVE --- */
+/* --- MOBILE RESPONSIVE (Preserving Zig-Zag) --- */
 @media (max-width: 768px) {
     .timeline-roadmap {
-        padding: 4rem 1rem;
+        padding: 4rem 0.5rem;
+        /* Narrower roadmap width for mobile */
+        max-width: 500px;
     }
 
+    /* Scaling the SVG container to fit mobile */
     .roadmap-svg {
-        display: none;
+        display: block;
+        /* Keep the road! */
+        width: 100%;
+        left: 0;
+        transform: scaleX(0.5);
+        /* Narrower peaks for mobile */
+        transform-origin: center;
     }
 
     .roadmap-item {
-        width: 100%;
-        left: 0 !important;
-        height: auto;
-        padding: 0 0 3rem 80px !important;
-        /* Left padding for vertical line */
-        justify-content: flex-start !important;
-
-        /* Simple Vertical Line */
-        border-left: 2px dashed rgba(255, 255, 255, 0.1);
-        margin-left: 20px;
+        /* Maintain zig-zag structure but tighter */
+        width: 50%;
+        height: 250px;
+        /* Shorter items on mobile */
+        padding: 0 10px !important;
     }
 
-    .roadmap-marker-wrapper {
-        left: -31px !important;
-        /* Center on border line (border is at 0, padding is 80) */
-        /* Wait, if item has margin-left 20px, and border-left... 
-           Let's just position absolute relative to item */
-        width: 60px;
-        top: 0 !important;
-        transform: none !important;
+    .roadmap-item.left {
+        left: 0;
+        padding-right: 20px !important;
+        /* Less padding on mobile */
     }
 
-    /* Re-align marker wrapper to be on the left line */
-    .roadmap-item .roadmap-marker-wrapper {
-        left: -31px !important;
+    .roadmap-item.right {
+        left: 50%;
+        padding-left: 20px !important;
+        /* Less padding on mobile */
+    }
+
+    .roadmap-item.left .roadmap-marker-wrapper {
+        left: 320px;
+        transform: scale(0.7) translateY(-50%);
+    }
+
+    .roadmap-item.right .roadmap-marker-wrapper {
+        left: 120px;
+        transform: scale(0.7) translateY(-50%);
     }
 
     .roadmap-content {
-        max-width: 100%;
+        max-width: 140px;
+        /* Narrower cards */
+        font-size: 0.75rem;
+    }
+
+    .content-inner {
+        padding: 0.8rem;
     }
 
     .roadmap-title {
-        font-size: 1.3rem;
+        font-size: 0.9rem;
+    }
+
+    .roadmap-desc {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+
+    .roadmap-marker {
+        width: 40px;
+        height: 40px;
+    }
+
+    .marker-icon {
+        font-size: 1rem;
     }
 }
