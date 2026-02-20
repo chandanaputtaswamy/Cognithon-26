@@ -229,7 +229,7 @@ const Home = () => {
                 </div>
             </Section>
 
-            <Section id="team" title="Meet the Team" subtitle="THE MINDS BEHIND COGNITHON">
+            <Section id="team">
                 <Coordinators />
             </Section>
         </div>
