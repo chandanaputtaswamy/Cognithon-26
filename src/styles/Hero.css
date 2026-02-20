@@ -46,11 +46,12 @@
     padding: 0.5rem 1rem;
     border-radius: 20px;
     color: var(--color-primary);
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 2rem;
-    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+    margin-top: 5rem;
+
     background: transparent;
     /* Transparent to let pseudo elements show */
     overflow: hidden;

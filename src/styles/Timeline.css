@@ -19,6 +19,24 @@
     pointer-events: none;
 }
 
+.path-road-glow {
+    filter: blur(15px);
+    opacity: 0.4;
+}
+
+.timeline-roadmap::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(188, 19, 254, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+}
+
 .roadmap-item {
     position: relative;
     width: 50%;

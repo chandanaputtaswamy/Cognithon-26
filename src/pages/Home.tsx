@@ -1,7 +1,8 @@
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import ProblemCard from '../components/ProblemCard';
-import Timeline from '../components/Timeline';
+import ScheduleRoadmap from '../components/ScheduleRoadmap';
+
 // import { Link } from 'react-router-dom';
 
 import eventsData from '../data/events.json';
@@ -79,9 +80,7 @@ const Home = () => {
                 <Guidelines />
             </Section>
 
-            <Section id="timeline" title="Schedule">
-                <Timeline events={eventsData.timeline} />
-            </Section>
+            <ScheduleRoadmap />
 
 
             <Section id="faq" title="Frequently Asked Questions" subtitle="COMMON QUESTIONS">

@@ -65,7 +65,26 @@ const Timeline = ({ events }: TimelineProps) => {
                         <stop offset="0%" stopColor="#facc15" />
                         <stop offset="100%" stopColor="#ca8a04" />
                     </linearGradient>
+                    <filter id="neonGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="8" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                    </filter>
                 </defs>
+
+                {/* Road Glow (Neon Light) */}
+                <motion.path
+                    d={generatePath()}
+                    stroke="var(--color-primary)"
+                    strokeWidth="40"
+                    fill="none"
+                    strokeLinecap="round"
+                    filter="url(#neonGlow)"
+                    className="path-road-glow"
+                    initial={{ pathLength: 0, opacity: 0 }}
+                    whileInView={{ pathLength: 1, opacity: 0.3 }}
+                    transition={{ duration: 2, ease: "easeInOut" }}
+                    viewport={{ once: true }}
+                />
 
                 {/* The Road (Thick Dark Path) */}
                 <motion.path
