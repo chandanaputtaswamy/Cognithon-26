@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import '../styles/Navbar.css';
@@ -26,34 +25,43 @@ const Navbar = () => {
     const toggleMenu = () => setIsOpen(!isOpen);
 
     const navLinks = [
-        { title: 'Home', path: '/' },
-        { title: 'About', path: '/#about' },
-        { title: 'Problems', path: '/#problems' },
-        { title: 'Timeline', path: '/#schedule' },
-        { title: 'FAQ', path: '/#faq' }
+        { title: 'Home', id: 'hero' },
+        { title: 'About', id: 'about' },
+        { title: 'Problems', id: 'problems' },
+        { title: 'Timeline', id: 'schedule' },
+        { title: 'FAQ', id: 'faq' }
     ];
+
+    const scrollToSection = (id: string) => {
+        if (id === 'hero') {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    };
 
     return (
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
-                <Link to="/" className="logo">
+                <div onClick={() => scrollToSection('hero')} className="logo" style={{ cursor: 'pointer' }}>
                     <img src="/favicon.png" alt="Cognithon Logo" className="nav-logo-img" />
                     COGNITHON<span>-26</span>
-                </Link>
+                </div>
 
                 {/* Desktop Links */}
                 <div className="nav-links">
                     {navLinks.map((link) => (
-                        <Link
+                        <button
                             key={link.title}
-                            to={link.path}
                             className="nav-link"
-                            onClick={() => {
-                                if (link.path === '/') window.scrollTo(0, 0);
-                            }}
+                            style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit' }}
+                            onClick={() => scrollToSection(link.id)}
                         >
                             {link.title}
-                        </Link>
+                        </button>
                     ))}
                     <a href="https://forms.gle/3afJzo9aP6hxweyZ8" className="register-btn" target="_blank" rel="noopener noreferrer">
                         Register Now
@@ -76,17 +84,17 @@ const Navbar = () => {
                         className="mobile-menu"
                     >
                         {navLinks.map((link) => (
-                            <Link
+                            <button
                                 key={link.title}
-                                to={link.path}
                                 className="nav-link"
+                                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', width: '100%', textAlign: 'left' }}
                                 onClick={() => {
+                                    scrollToSection(link.id);
                                     toggleMenu();
-                                    if (link.path === '/') window.scrollTo(0, 0);
                                 }}
                             >
                                 {link.title}
-                            </Link>
+                            </button>
                         ))}
                         <a href="https://forms.gle/3afJzo9aP6hxweyZ8" className="register-btn" onClick={toggleMenu} style={{ width: '100%', textAlign: 'center', display: 'block' }} target="_blank" rel="noopener noreferrer">
                             Register Now
