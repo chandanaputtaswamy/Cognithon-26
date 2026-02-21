@@ -37,12 +37,20 @@
     margin-bottom: 0.5rem;
 }
 
-.footer-section ul li a {
+.footer-section ul li a,
+.footer-link-btn {
     color: var(--text-muted);
     font-size: 0.9rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
+.footer-section ul li a:hover,
+.footer-link-btn:hover {
     color: var(--color-primary);
 }
 
