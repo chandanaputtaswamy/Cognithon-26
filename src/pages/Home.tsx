@@ -14,6 +14,7 @@ import Sponsors from '../components/Sponsors';
 import Coordinators from '../components/Coordinators';
 import Guidelines from '../components/Guidelines';
 import FAQ from '../components/FAQ';
+import EventHighlights from '../components/EventHighlights';
 
 const Home = () => {
     const location = useLocation();
@@ -86,6 +87,10 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
+            </Section>
+
+            <Section id="highlights" title="Event Highlights" subtitle="MENTORSHIP & EVALUATION">
+                <EventHighlights />
             </Section>
 
             <Section id="featured-problem" title="Featured Problem" subtitle="SOLVE REAL WORLD CHALLENGES">
