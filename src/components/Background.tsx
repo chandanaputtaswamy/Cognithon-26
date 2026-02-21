@@ -74,9 +74,10 @@ const Background: React.FC = () => {
                 0,
                 currentMouseRef.current.x,
                 currentMouseRef.current.y,
-                1200
+                1000
             );
-            gradient.addColorStop(0, 'rgba(255, 255, 255, 0.12)');
+            gradient.addColorStop(0, 'rgba(255, 255, 255, 0.15)');
+            gradient.addColorStop(0.2, 'rgba(255, 255, 255, 0.05)');
             gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, width, height);
