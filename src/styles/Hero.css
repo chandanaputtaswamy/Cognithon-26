@@ -275,14 +275,15 @@
         justify-content: center;
         gap: 0;
         /* Removing internal gap */
-        margin-top: -4rem;
-        /* Pull logo heavily upward toward badge to kill gap entirely */
+        margin-top: 1rem;
+        /* Added gap between badge and logo */
         margin-bottom: 1.5rem;
     }
 
     .hero-badge {
         margin-top: 0;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1.5rem;
+        /* Increased margin below badge */
         font-size: 1.4rem;
         /* Increased size as requested */
         padding: 0.5rem 1rem;
