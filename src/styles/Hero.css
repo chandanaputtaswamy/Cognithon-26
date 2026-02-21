@@ -7,8 +7,8 @@
     /* Left align content */
     position: relative;
     overflow: hidden;
-    padding-top: 100px;
-    /* Increased to account for fixed navbar */
+    padding-top: 80px;
+    /* Further reduced for tighter fit */
     padding-left: 2%;
     /* Reduced from 5% to move content left */
 }
@@ -51,8 +51,8 @@
     font-weight: 600;
     letter-spacing: 2px;
     margin-bottom: 2rem;
-    margin-top: 1rem;
-    /* Reduced from 2rem */
+    margin-top: 0;
+    /* Removed for tighter fit */
 
     background: transparent;
     /* Transparent to let pseudo elements show */
