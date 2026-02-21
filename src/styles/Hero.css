@@ -2,15 +2,16 @@
     min-height: 100vh;
     width: 100%;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    /* Vertically center content */
     justify-content: flex-start;
     /* Left align content */
     position: relative;
     overflow: hidden;
-    padding-top: 80px;
-    /* Further reduced for tighter fit */
-    padding-left: 2%;
-    /* Reduced from 5% to move content left */
+    padding-top: 0;
+    /* Removed explicit padding to rely on vertical centering */
+    padding-left: 0;
+    /* Removed to rely on hero-content padding */
 }
 
 .hero-bg-glow {
@@ -26,11 +27,13 @@
 }
 
 .hero-content {
-    max-width: 900px;
-    padding: 0 1rem;
+    max-width: 1200px;
+    /* Increased to allow wider layout like navbar */
+    padding: 0 2rem;
+    /* Matches navbar container padding */
+    margin: 0;
     z-index: 1;
     text-align: left;
-    /* Text left align */
     width: 100%;
 }
 
@@ -38,7 +41,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    /* Flex items left align */
 }
 
 .hero-badge {
@@ -105,7 +107,7 @@
     align-items: center;
     gap: 1.5rem;
     /* Reduced from 3rem to bring title closer to logo */
-    margin-bottom: 1rem;
+    margin-bottom: 0;
 }
 
 .hero-logo-large {
@@ -136,8 +138,8 @@
     align-items: center;
     gap: 1rem;
     cursor: default;
-    padding-bottom: 0.2em;
-    /* Extra space for descenders */
+    padding-bottom: 0;
+    margin: 0;
 
     /* Dynamic Reveal Effect */
     color: transparent;
@@ -169,7 +171,8 @@
 .hero-subtitle-main {
     font-size: 3rem;
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
     color: var(--text-main);
 }
 
@@ -186,7 +189,8 @@
     font-weight: 600;
     letter-spacing: 0.2em;
     color: var(--text-muted);
-    margin-bottom: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
 }
 
@@ -251,32 +255,59 @@
         justify-content: center;
         padding-left: 0;
         text-align: center;
+        padding-top: 6rem;
+        /* Add some spacing from navbar */
     }
 
     .hero-content {
         text-align: center;
+        padding: 0 1rem;
+    }
+
+    .hero-inner {
+        align-items: center;
+        /* Center everything flex-wise */
+    }
+
+    .hero-main-title-group {
+        flex-direction: column;
+        /* Stack logo and title */
+        justify-content: center;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
     }
 
     .hero-badge {
-        margin-top: 2rem;
+        margin-top: 1rem;
         margin-bottom: 2rem;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 
     .hero-title-main {
-        font-size: 3rem;
+        font-size: 2.8rem;
+        /* Slightly smaller to fit on narrow screens */
+        white-space: normal;
+        /* Allow wrapping if needed */
+        text-align: center;
+        line-height: 1.2;
     }
 
     .hero-logo-large {
-        height: 150px;
+        height: 120px;
+        /* Smaller logo for mobile */
     }
 
     .hero-subtitle-main {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .hero-tagline-small {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+    }
+
+    .hero-description {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
     }
 
     .hero-cta {
