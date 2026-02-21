@@ -27,32 +27,32 @@ const milestones: Milestone[] = [
         title: "Registration Opens",
         description: "Online registration begins for participants.",
         icon: <FaRegClipboard />,
-        x: 20,
-        y: 40 // Zigzag Top
+        x: 12,
+        y: 50
     },
     {
         time: "Phase 2",
         title: "Shortlisting Announcement",
         description: "Shortlisted teams are announced & contacted.",
         icon: <FaRegBell />,
-        x: 40,
-        y: 60 // Zigzag Bottom
+        x: 37,
+        y: 50
     },
     {
         time: "Phase 3",
         title: "Hackathon Starts",
         description: "Teams begin working on their problem statements.",
         icon: <FaRegPlayCircle />,
-        x: 60,
-        y: 40 // Zigzag Top
+        x: 63,
+        y: 50
     },
     {
         time: "Phase 4",
         title: "Hackathon Ends",
         description: "Final submissions and closing session.",
         icon: <FaRegCheckCircle />,
-        x: 80,
-        y: 60 // Zigzag Bottom
+        x: 88,
+        y: 50
     }
 ];
 
@@ -61,21 +61,26 @@ const milestones: Milestone[] = [
 
 
 const ScheduleRoadmap = () => {
-    const generatePath = () => {
+    const generatePulsePath = () => {
         const sortedPoints = [...milestones].sort((a, b) => a.x - b.x);
         const startX = 0;
-        const startY = 200;
+        const startY = 150; // Midline
 
-        // Use a simple straight zigzag path. 
-        // CSS stroke-linejoin: round will make the corners 'lil smooth'.
         let path = `M ${startX} ${startY}`;
 
-        sortedPoints.forEach(p => {
-            path += ` L ${p.x * 12} ${p.y * 5}`;
+        sortedPoints.forEach((p, i) => {
+            const peakY = i % 2 === 0 ? 60 : 240; // Tighter peaks (closer to midline)
+            const gap = 10; // width of the pulse base
+
+            // Move to start of pulse
+            path += ` L ${(p.x - gap) * 12} ${startY}`;
+            // Slant to peak/valley
+            path += ` L ${p.x * 12} ${peakY}`;
+            // Slant back to midline
+            path += ` L ${(p.x + gap) * 12} ${startY}`;
         });
 
         path += ` L 1200 ${startY}`;
-
         return path;
     };
 
@@ -95,31 +100,39 @@ const ScheduleRoadmap = () => {
             <div className="roadmap-wrapper">
                 <svg
                     className="roadmap-svg-horizontal"
-                    viewBox="0 0 1200 600"
+                    viewBox="0 0 1200 300"
                     preserveAspectRatio="none"
                 >
+                    {/* Dim Horizontal Base Line */}
+                    <line
+                        x1="0" y1="150" x2="1200" y2="150"
+                        stroke="var(--color-primary)"
+                        strokeWidth="1"
+                        opacity="0.2"
+                    />
 
                     {/* Background glow path */}
                     <motion.path
-                        d={generatePath()}
+                        d={generatePulsePath()}
                         fill="none"
-                        stroke="var(--color-secondary)"
+                        stroke="var(--color-primary)"
                         strokeWidth="12"
                         strokeLinecap="round"
                         className="path-glow-neon"
                         initial={{ pathLength: 0, opacity: 0 }}
-                        whileInView={{ pathLength: 1, opacity: 0.4 }}
+                        whileInView={{ pathLength: 1, opacity: 0.15 }}
                         transition={{ duration: 2, ease: "easeInOut" }}
                         viewport={{ once: false }}
                     />
 
-                    {/* Main road path */}
+                    {/* Main pulse path */}
                     <motion.path
-                        d={generatePath()}
+                        d={generatePulsePath()}
                         fill="none"
                         stroke="var(--color-primary)"
                         strokeWidth="4"
                         strokeLinecap="round"
+                        strokeLinejoin="round"
                         className="path-road-neon"
                         initial={{ pathLength: 0 }}
                         whileInView={{ pathLength: 1 }}
@@ -132,10 +145,10 @@ const ScheduleRoadmap = () => {
                     {milestones.map((milestone, index) => (
                         <motion.div
                             key={index}
-                            className="milestone-node"
+                            className={`milestone-node ${index % 2 === 0 ? 'milestone-node--top' : 'milestone-node--bottom'}`}
                             style={{
                                 left: `${milestone.x}%`,
-                                top: `${milestone.y}%`
+                                top: `50%`
                             }}
 
                             initial={{ opacity: 0, scale: 0.5 }}

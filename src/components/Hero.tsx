@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
 
 const Hero = () => {
@@ -51,7 +50,17 @@ const Hero = () => {
                         >
                             Register Now
                         </a>
-                        <Link to="/#problems" className="btn btn-outline">View Problem Statements</Link>
+                        <button
+                            onClick={() => {
+                                const element = document.getElementById('featured-problem');
+                                if (element) {
+                                    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                }
+                            }}
+                            className="btn btn-outline"
+                        >
+                            View Problem Statements
+                        </button>
                     </div>
                 </motion.div>
             </div>

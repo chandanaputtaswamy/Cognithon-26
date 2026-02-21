@@ -27,7 +27,7 @@ const Navbar = () => {
     const navLinks = [
         { title: 'Home', id: 'hero' },
         { title: 'About', id: 'about' },
-        { title: 'Problems', id: 'problems' },
+        { title: 'Problems', id: 'featured-problem' },
         { title: 'Timeline', id: 'schedule' },
         { title: 'FAQ', id: 'faq' }
     ];

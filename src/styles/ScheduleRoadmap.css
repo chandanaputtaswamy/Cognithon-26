@@ -1,5 +1,5 @@
 .schedule-roadmap-section {
-    padding-top: 2rem;
+    padding-top: 1rem;
     padding-bottom: 2rem;
     min-height: auto;
     background: transparent;
@@ -8,7 +8,7 @@
 }
 
 .schedule-roadmap-section .section-header {
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -16,8 +16,8 @@
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
-    height: 400px;
-    /* Adjusted height for linear layout */
+    height: 500px;
+    /* Increased height for more pronounced zigzag and alternating boxes */
     overflow: visible;
 }
 
@@ -51,15 +51,19 @@
 
 .path-road-neon {
     stroke: var(--color-primary);
-    stroke-width: 4px;
+    stroke-width: 5px;
     fill: none;
     stroke-linejoin: round;
     stroke-linecap: round;
-    /* Smoother zigzag corners */
+    filter: drop-shadow(0 0 8px var(--color-primary));
 }
 
 .path-glow-neon {
-    display: none;
+    display: block;
+    stroke: var(--color-primary);
+    stroke-width: 15px;
+    opacity: 0.15;
+    filter: blur(12px);
 }
 
 /* Milestone Nodes */
@@ -77,28 +81,47 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transform: translate(-50%, -24px);
-    /* Centers the 48px icon on the path */
-    width: 220px;
-    transition: all 0.3s ease;
+    width: 260px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 5;
+}
+
+.milestone-node--top {
+    flex-direction: column-reverse;
+    transform: translate(-50%, -50%);
+    /* Center the icon precisely on the midline */
+}
+
+.milestone-node--bottom {
+    transform: translate(-50%, -50%);
+    /* Center the icon precisely on the midline */
 }
 
 .milestone-marker {
-    width: 48px;
-    height: 48px;
-    background: var(--bg-dark);
-    border: 2px solid var(--color-primary);
+    width: 52px;
+    height: 52px;
+    background: #0a0a0a;
+    border: 3px solid var(--color-primary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: var(--color-primary);
     transition: all 0.3s ease;
-    z-index: 3;
-    box-shadow: none;
-    margin-bottom: 1.8rem;
-    /* Space between icon and card below */
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+    position: relative;
+}
+
+.milestone-node--top .milestone-marker {
+    margin-top: 1.5rem;
+    /* Reduced margin to bring box closer to icon */
+}
+
+.milestone-node--bottom .milestone-marker {
+    margin-bottom: 1.5rem;
+    /* Reduced margin to bring box closer to icon */
 }
 
 .milestone-node:hover .milestone-marker {
@@ -109,16 +132,16 @@
 
 .milestone-text {
     text-align: center;
-    background: rgba(10, 10, 10, 0.9);
+    background: rgba(17, 17, 17, 0.95);
     padding: 1.25rem;
-    border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    /* Subtle neon border */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
-    transition: all 0.3s ease;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 243, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8),
+        inset 0 0 20px rgba(255, 255, 255, 0.02);
+    transition: all 0.4s ease;
     width: 100%;
     position: relative;
-    z-index: 2;
+    backdrop-filter: blur(10px);
 }
 
 .milestone-node:hover .milestone-text {

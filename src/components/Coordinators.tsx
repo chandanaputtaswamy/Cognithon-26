@@ -32,15 +32,7 @@ const facultyCoordinators: Coordinator[] = [
     }
 ];
 
-const studentCoordinators: Coordinator[] = [
-    {
-        id: 1,
-        name: "Abhigna Shankar",
-        role: "Marketing and Design Crew",
-        image: "https://via.placeholder.com/150",
-        phone: "+91 93539 04413",
-        linkedin: "https://www.linkedin.com/in/abhigna-shankar-6610812a3/"
-    },
+const technicalCrew: Coordinator[] = [
     {
         id: 2,
         name: "Ananya S",
@@ -64,6 +56,17 @@ const studentCoordinators: Coordinator[] = [
         image: "https://via.placeholder.com/150",
         phone: "+91 84310 27914",
         linkedin: "https://www.linkedin.com/in/chinmaya-bhagya-2a42392a3/"
+    }
+];
+
+const marketingDesignCrew: Coordinator[] = [
+    {
+        id: 1,
+        name: "Abhigna Shankar",
+        role: "Marketing and Design Crew",
+        image: "https://via.placeholder.com/150",
+        phone: "+91 93539 04413",
+        linkedin: "https://www.linkedin.com/in/abhigna-shankar-6610812a3/"
     },
     {
         id: 5,
@@ -88,7 +91,7 @@ const CoordinatorCard = ({ coordinator }: { coordinator: Coordinator }) => (
         className="coordinator-card"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
+        viewport={{ once: false, amount: 0.2 }}
         transition={{ duration: 0.5 }}
         whileHover={{ y: -5 }}
     >
@@ -117,7 +120,15 @@ const Coordinators = () => {
     return (
         <div className="coordinators-container">
             <div className="coordinators-section">
-                <h3 className="coordinators-subtitle">Faculty Coordinators</h3>
+                <motion.h3
+                    className="coordinators-subtitle"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.6 }}
+                >
+                    Faculty Coordinators
+                </motion.h3>
                 <div className="coordinators-grid faculty-grid">
                     {facultyCoordinators.map(coordinator => (
                         <CoordinatorCard key={coordinator.id} coordinator={coordinator} />
@@ -126,12 +137,43 @@ const Coordinators = () => {
             </div>
 
             <div className="coordinators-section">
-                <div className="section-header" style={{ marginBottom: '3rem', marginTop: '1rem' }}>
+                <motion.div
+                    className="section-header team-header"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.8 }}
+                >
                     <h2 className="section-title">Meet the Team</h2>
                     <p className="section-subtitle">THE MINDS BEHIND COGNITHON</p>
+                </motion.div>
+
+                <motion.h3
+                    className="coordinators-subtitle crew-title"
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Technical Crew
+                </motion.h3>
+                <div className="coordinators-grid student-grid tech-grid">
+                    {technicalCrew.map(coordinator => (
+                        <CoordinatorCard key={coordinator.id} coordinator={coordinator} />
+                    ))}
                 </div>
-                <div className="coordinators-grid student-grid">
-                    {studentCoordinators.map(coordinator => (
+
+                <motion.h3
+                    className="coordinators-subtitle crew-title marketing-crew-title"
+                    initial={{ opacity: 0, y: 15 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.5 }}
+                >
+                    Marketing and Design Crew
+                </motion.h3>
+                <div className="coordinators-grid student-grid marketing-grid">
+                    {marketingDesignCrew.map(coordinator => (
                         <CoordinatorCard key={coordinator.id} coordinator={coordinator} />
                     ))}
                 </div>

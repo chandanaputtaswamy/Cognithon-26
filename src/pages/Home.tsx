@@ -65,7 +65,7 @@ const Home = () => {
                 </div>
             </Section>
 
-            <Section id="problems" title="Featured Problem" subtitle="SOLVE REAL WORLD CHALLENGES">
+            <Section id="featured-problem" title="Featured Problem" subtitle="SOLVE REAL WORLD CHALLENGES">
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
                     {problemsData.map((problem) => (
                         <div key={problem.id} style={{ maxWidth: '800px', width: '100%' }}>
