@@ -49,7 +49,14 @@ const Footer = () => {
                 <div className="footer-section">
                     <h4>Connect</h4>
                     <div className="social-icons">
-                        <a href="#" aria-label="Instagram"><FaInstagram /></a>
+                        <a
+                            href="https://www.instagram.com/codeclub_gsss?igsh=Y2RnaTlkeWM3ZjZq"
+                            aria-label="Instagram"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FaInstagram />
+                        </a>
                     </div>
                 </div>
             </div>
