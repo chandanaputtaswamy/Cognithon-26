@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-
     const [scrolled, setScrolled] = useState(false);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,14 +34,28 @@ const Navbar = () => {
     ];
 
     const scrollToSection = (id: string) => {
+        if (location.pathname !== '/') {
+            navigate('/', { state: { scrollTo: id } });
+            if (isOpen) toggleMenu();
+            return;
+        }
+
         if (id === 'hero') {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         } else {
             const element = document.getElementById(id);
             if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                const navHeight = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         }
+        if (isOpen) toggleMenu();
     };
 
     return (

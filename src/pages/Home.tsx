@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
 import ProblemCard from '../components/ProblemCard';
@@ -14,6 +16,27 @@ import Guidelines from '../components/Guidelines';
 import FAQ from '../components/FAQ';
 
 const Home = () => {
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.state && (location.state as any).scrollTo) {
+            const id = (location.state as any).scrollTo;
+            const element = document.getElementById(id);
+            if (element) {
+                setTimeout(() => {
+                    const navHeight = 80;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
+        }
+    }, [location]);
+
     return (
         <div className="home-page">
             <Hero />
