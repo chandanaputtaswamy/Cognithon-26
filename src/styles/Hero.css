@@ -8,8 +8,8 @@
     position: relative;
     overflow: hidden;
     padding-top: 60px;
-    padding-left: 5%;
-    /* Add some spacing from left */
+    padding-left: 2%;
+    /* Reduced from 5% to move content left */
 }
 
 .hero-bg-glow {
@@ -101,13 +101,14 @@
 .hero-main-title-group {
     display: flex;
     align-items: center;
-    gap: 3rem;
+    gap: 1.5rem;
+    /* Reduced from 3rem to bring title closer to logo */
     margin-bottom: 1rem;
 }
 
 .hero-logo-large {
-    height: 250px;
-    /* Way bigger as requested */
+    height: 200px;
+    /* Slightly smaller to allow more room on left */
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 0 25px rgba(0, 243, 255, 0.4));
