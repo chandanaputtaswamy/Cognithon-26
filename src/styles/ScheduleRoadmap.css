@@ -1,21 +1,22 @@
 .schedule-roadmap-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
     background: transparent;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
 
 .schedule-roadmap-section .section-header {
-    margin-bottom: 6rem;
+    margin-bottom: -8rem;
     text-align: center;
 }
 
 .roadmap-wrapper {
     position: relative;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    height: 500px;
+    height: 600px;
     /* Increased height for more pronounced zigzag and alternating boxes */
     overflow: visible;
 }
@@ -78,49 +79,31 @@
 .milestone-node {
     position: absolute;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    width: 260px;
+    width: 46px;
+    height: 46px;
+    transform: translate(-50%, -50%);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 5;
 }
 
-.milestone-node--top {
-    flex-direction: column-reverse;
-    transform: translate(-50%, -50%);
-    /* Center the icon precisely on the midline */
-}
-
-.milestone-node--bottom {
-    transform: translate(-50%, -50%);
-    /* Center the icon precisely on the midline */
-}
-
 .milestone-marker {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
     background: #0a0a0a;
     border: 3px solid var(--color-primary);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--color-primary);
     transition: all 0.3s ease;
     z-index: 10;
     box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
     position: relative;
-}
-
-.milestone-node--top .milestone-marker {
-    margin-top: 1.5rem;
-    /* Reduced margin to bring box closer to icon */
-}
-
-.milestone-node--bottom .milestone-marker {
-    margin-bottom: 1.5rem;
-    /* Reduced margin to bring box closer to icon */
+    flex-shrink: 0;
 }
 
 .milestone-node:hover .milestone-marker {
@@ -130,6 +113,7 @@
 }
 
 .milestone-text {
+    position: absolute;
     text-align: center;
     background: rgba(10, 10, 10, 0.9);
     padding: 1rem;
@@ -137,10 +121,16 @@
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     transition: all 0.3s ease;
-    width: 100%;
-    margin: 0 auto;
-    position: relative;
+    width: 240px;
     z-index: 2;
+}
+
+.milestone-node--top .milestone-text {
+    bottom: calc(100% + 1.5rem);
+}
+
+.milestone-node--bottom .milestone-text {
+    top: calc(100% + 1.5rem);
 }
 
 .milestone-node:hover .milestone-text {
@@ -174,6 +164,10 @@
 
 /* Responsive Overrides */
 @media (max-width: 1024px) {
+    .schedule-roadmap-section .section-header {
+        margin-bottom: 0;
+    }
+
     .roadmap-wrapper {
         height: auto;
         display: flex;
@@ -206,6 +200,7 @@
         top: auto !important;
         width: 100%;
         max-width: 400px;
+        height: auto;
         flex-direction: row !important;
         gap: 1.5rem;
         text-align: left;
@@ -213,12 +208,15 @@
 
     .milestone-marker {
         flex-shrink: 0;
-        margin-bottom: 0;
         width: 45px;
         height: 45px;
     }
 
     .milestone-text {
+        position: relative;
+        width: 100%;
+        top: auto !important;
+        bottom: auto !important;
         text-align: left;
     }
 }

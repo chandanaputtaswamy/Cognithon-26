@@ -27,16 +27,16 @@ const milestones: Milestone[] = [
         title: "Registration Opens",
         description: "23-02-2026, Monday",
         icon: <FaRegClipboard />,
-        x: 10,
-        y: 70 // Valley
+        x: 15,
+        y: 65 // Valley
     },
     {
         time: "Phase 2",
         title: "Registration Closes",
         description: "06-03-2026, Friday",
         icon: <FaRegCalendarTimes />,
-        x: 30,
-        y: 30 // Peak
+        x: 32.5,
+        y: 35 // Peak
     },
     {
         time: "Phase 3",
@@ -44,23 +44,23 @@ const milestones: Milestone[] = [
         description: "14-03-2026, Saturday",
         icon: <FaRegBell />,
         x: 50,
-        y: 70 // Valley
+        y: 65 // Valley
     },
     {
         time: "Phase 4",
         title: "Hackathon Starts",
         description: "10-04-2026, Friday",
         icon: <FaRegPlayCircle />,
-        x: 70,
-        y: 30 // Peak
+        x: 67.5,
+        y: 35 // Peak
     },
     {
         time: "Phase 5",
         title: "Hackathon Ends",
         description: "11-04-2026, Saturday",
         icon: <FaRegCheckCircle />,
-        x: 90,
-        y: 70 // Valley
+        x: 85,
+        y: 65 // Valley
     }
 ];
 
