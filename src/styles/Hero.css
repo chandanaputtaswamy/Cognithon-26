@@ -8,8 +8,8 @@
     /* Left align content */
     position: relative;
     overflow: hidden;
-    padding-top: 0;
-    /* Removed explicit padding to rely on vertical centering */
+    padding-top: 6rem;
+    /* Added padding to prevent badge from sticking to navbar on desktop */
     padding-left: 0;
     /* Removed to rely on hero-content padding */
 }
