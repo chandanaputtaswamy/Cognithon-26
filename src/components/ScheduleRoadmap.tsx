@@ -5,7 +5,8 @@ import {
     FaRegClipboard,
     FaRegBell,
     FaRegPlayCircle,
-    FaRegCheckCircle
+    FaRegCheckCircle,
+    FaRegCalendarTimes
 } from 'react-icons/fa';
 
 
@@ -17,7 +18,6 @@ interface Milestone {
     description: string;
     icon: React.ReactNode;
     x: number; // Percentage from left
-
     y: number; // Percentage from top
 }
 
@@ -25,34 +25,42 @@ const milestones: Milestone[] = [
     {
         time: "Phase 1",
         title: "Registration Opens",
-        description: "Online registration begins for participants.",
+        description: "23-02-2026, Monday",
         icon: <FaRegClipboard />,
-        x: 20,
-        y: 40 // Zigzag Top
+        x: 10,
+        y: 70 // Valley
     },
     {
         time: "Phase 2",
-        title: "Shortlisting Announcement",
-        description: "Shortlisted teams are announced & contacted.",
-        icon: <FaRegBell />,
-        x: 40,
-        y: 60 // Zigzag Bottom
+        title: "Registration Closes",
+        description: "06-03-2026, Friday",
+        icon: <FaRegCalendarTimes />,
+        x: 30,
+        y: 30 // Peak
     },
     {
         time: "Phase 3",
-        title: "Hackathon Starts",
-        description: "Teams begin working on their problem statements.",
-        icon: <FaRegPlayCircle />,
-        x: 60,
-        y: 40 // Zigzag Top
+        title: "Shortlisting Announcement",
+        description: "14-03-2026, Saturday",
+        icon: <FaRegBell />,
+        x: 50,
+        y: 70 // Valley
     },
     {
         time: "Phase 4",
+        title: "Hackathon Starts",
+        description: "10-04-2026, Friday",
+        icon: <FaRegPlayCircle />,
+        x: 70,
+        y: 30 // Peak
+    },
+    {
+        time: "Phase 5",
         title: "Hackathon Ends",
-        description: "Final submissions and closing session.",
+        description: "11-04-2026, Saturday",
         icon: <FaRegCheckCircle />,
-        x: 80,
-        y: 60 // Zigzag Bottom
+        x: 90,
+        y: 70 // Valley
     }
 ];
 
