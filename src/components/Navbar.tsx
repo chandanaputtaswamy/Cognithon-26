@@ -34,9 +34,10 @@ const Navbar = () => {
     ];
 
     const scrollToSection = (id: string) => {
+        if (isOpen) setIsOpen(false);
+
         if (location.pathname !== '/') {
             navigate('/', { state: { scrollTo: id } });
-            if (isOpen) toggleMenu();
             return;
         }
 
@@ -45,7 +46,7 @@ const Navbar = () => {
         } else {
             const element = document.getElementById(id);
             if (element) {
-                const navHeight = 80;
+                const navHeight = 70;
                 const elementPosition = element.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
@@ -55,7 +56,6 @@ const Navbar = () => {
                 });
             }
         }
-        if (isOpen) toggleMenu();
     };
 
     return (
@@ -103,15 +103,19 @@ const Navbar = () => {
                                 key={link.title}
                                 className="nav-link"
                                 style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', width: '100%', textAlign: 'left' }}
-                                onClick={() => {
-                                    scrollToSection(link.id);
-                                    toggleMenu();
-                                }}
+                                onClick={() => scrollToSection(link.id)}
                             >
                                 {link.title}
                             </button>
                         ))}
-                        <a href="https://forms.gle/3afJzo9aP6hxweyZ8" className="register-btn" onClick={toggleMenu} style={{ width: '100%', textAlign: 'center', display: 'block' }} target="_blank" rel="noopener noreferrer">
+                        <a
+                            href="https://forms.gle/3afJzo9aP6hxweyZ8"
+                            className="register-btn"
+                            onClick={() => setIsOpen(false)}
+                            style={{ width: '100%', textAlign: 'center', display: 'block' }}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
                             Register Now
                         </a>
                     </motion.div>
