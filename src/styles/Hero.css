@@ -7,7 +7,8 @@
     /* Left align content */
     position: relative;
     overflow: hidden;
-    padding-top: 60px;
+    padding-top: 40px;
+    /* Reduced from 60px */
     padding-left: 2%;
     /* Reduced from 5% to move content left */
 }
@@ -49,8 +50,9 @@
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 2.5rem;
-    margin-top: 5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    /* Reduced from 5rem */
 
     background: transparent;
     /* Transparent to let pseudo elements show */
