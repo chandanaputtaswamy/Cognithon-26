@@ -273,9 +273,10 @@
         flex-direction: column;
         /* Stack logo and title */
         justify-content: center;
-        gap: 0.5rem;
-        margin-top: -2.5rem;
-        /* Pull up further to counter logo image transparent padding */
+        gap: 0;
+        /* Removing internal gap */
+        margin-top: -4rem;
+        /* Pull logo heavily upward toward badge to kill gap entirely */
         margin-bottom: 1.5rem;
     }
 
