@@ -30,6 +30,11 @@ body {
   overflow-x: hidden;
 }
 
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
 a {
   color: var(--color-primary);
   text-decoration: none;

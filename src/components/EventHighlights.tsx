@@ -7,7 +7,8 @@ import {
     FaHeadset,
     FaTrophy,
     FaCheckDouble,
-    FaLightbulb
+    FaLightbulb,
+    FaMapMarkerAlt
 } from 'react-icons/fa';
 import '../styles/EventHighlights.css';
 
@@ -15,6 +16,10 @@ const highlights = [
     {
         icon: <FaAward />,
         text: "National-level women-only hackathon designed to inspire innovation and collaboration."
+    },
+    {
+        icon: <FaMapMarkerAlt />,
+        text: "On-the-spot problem statement revealed at the venue."
     },
     {
         icon: <FaUsers />,

@@ -11,21 +11,26 @@
     },
     {
         "id": 3,
+        "question": "What is the registration fees for the shortlisted students?",
+        "answer": "Rs. 600/-  for students of GSSSIETW, Mysuru\nRs. 1200/- for external participants"
+    },
+    {
+        "id": 4,
         "question": "What is the mode of the hackathon?",
         "answer": "The hackathon will be conducted offline, along with mentorship support for the shortlisted teams only."
     },
     {
-        "id": 4,
+        "id": 5,
         "question": "Will mentors or guidance be available?",
         "answer": "Yes, mentorship will be provided to shortlisted teams."
     },
     {
-        "id": 5,
+        "id": 6,
         "question": "Will food and refreshments be provided?",
         "answer": "Yes, both food and refreshments will be provided during the event."
     },
     {
-        "id": 6,
+        "id": 7,
         "question": "Is transportation facility available?",
         "answer": "No, participants must arrange their own transportation to the venue."
     }

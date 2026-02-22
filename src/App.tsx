@@ -5,11 +5,13 @@ import Home from './pages/Home';
 import Register from './pages/Register';
 
 import Background from './components/Background';
+import CustomCursor from './components/CustomCursor';
 
 const App = () => {
   return (
     <Router>
       <div className="app-wrapper">
+        <CustomCursor />
         <Background />
         <Navbar />
         <main>
