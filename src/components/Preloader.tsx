@@ -15,15 +15,15 @@ const terminalSteps = [
     { text: "RESOLVING DEPENDENCIES...", type: "normal" },
     { text: "CHECKING SYSTEM INTEGRITY...", type: "normal" },
     { text: "SYSTEM STABLE ✔", type: "success" },
-    { text: "DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE", type: "highlight" },
-    { text: "PROUDLY PRESENTS", type: "highlight" },
+    { text: "DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE PROUDLY PRESENTS", type: "highlight" },
+    //{ text: "PROUDLY PRESENTS", type: "highlight" },
     { text: "LOADING HACKATHON ENVIRONMENT...", type: "normal" },
     { text: "BYPASSING MAINFRAME FIREWALLS...", type: "normal" },
     { text: "DECRYPTING PROBLEM STATEMENTS...", type: "normal" },
     { text: "INITIALIZING CHALLENGE MODULES...", type: "normal" },
     { text: "OPTIMIZING PERFORMANCE CORE...", type: "normal" },
     { text: "FINALIZING USER INTERFACE...", type: "normal" },
-    { text: "SYSTEM READY 🚀", type: "success" },
+    { text: "SYSTEM READY", type: "success" },
     { text: "WELCOME TO COGNITHON-26", type: "highlight-large" },
     { text: "INNOVATE. DISRUPT. BUILD THE FUTURE.", type: "highlight" }
 ];
