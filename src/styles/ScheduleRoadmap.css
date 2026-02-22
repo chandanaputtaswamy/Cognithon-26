@@ -126,11 +126,11 @@
 }
 
 .milestone-node--top .milestone-text {
-    bottom: calc(100% + 1.5rem);
+    bottom: calc(100% + 12rem);
 }
 
 .milestone-node--bottom .milestone-text {
-    top: calc(100% + 1.5rem);
+    top: calc(100% + 8rem);
 }
 
 .milestone-node:hover .milestone-text {
