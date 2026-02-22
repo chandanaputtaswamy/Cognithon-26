@@ -20,9 +20,9 @@ const Home = () => {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.state && (location.state as any).scrollTo) {
-            const id = (location.state as any).scrollTo;
-            const element = document.getElementById(id);
+        if (location.state && (location.state as { scrollTo?: string }).scrollTo) {
+            const id = (location.state as { scrollTo?: string }).scrollTo;
+            const element = document.getElementById(id!);
             if (element) {
                 setTimeout(() => {
                     const navHeight = 80;
