@@ -14,6 +14,7 @@
 
 .roadmap-wrapper {
     position: relative;
+    width: 100%;
     max-width: 1400px;
     margin: 0 auto;
     height: 600px;
@@ -83,7 +84,8 @@
     align-items: center;
     width: 46px;
     height: 46px;
-    transform: translate(-50%, -50%);
+    margin-left: -23px;
+    margin-top: -23px;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 5;
 }
@@ -195,7 +197,8 @@
 
     .milestone-node {
         position: relative;
-        transform: none;
+        margin-left: 0 !important;
+        margin-top: 0 !important;
         left: auto !important;
         top: auto !important;
         width: 100%;

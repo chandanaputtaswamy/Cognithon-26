@@ -140,7 +140,7 @@ const ScheduleRoadmap = () => {
                     {milestones.map((milestone, index) => (
                         <motion.div
                             key={index}
-                            className={`milestone-node ${index % 2 === 0 ? 'milestone-node--top' : 'milestone-node--bottom'}`}
+                            className={`milestone-node ${index % 2 === 0 ? 'milestone-node--bottom' : 'milestone-node--top'}`}
                             style={{
                                 left: `${milestone.x}%`,
                                 top: `${milestone.y}%`
