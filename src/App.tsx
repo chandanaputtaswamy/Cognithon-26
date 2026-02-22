@@ -6,11 +6,13 @@ import Register from './pages/Register';
 
 import Background from './components/Background';
 import CustomCursor from './components/CustomCursor';
+import Preloader from './components/Preloader';
 
 const App = () => {
   return (
     <Router>
       <div className="app-wrapper">
+        <Preloader />
         <CustomCursor />
         <Background />
         <Navbar />

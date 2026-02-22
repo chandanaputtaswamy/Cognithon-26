@@ -1,0 +1,190 @@
+.preloader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg-dark);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-header {
+    background-color: #1a1a1a;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.terminal-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.terminal-dot.red {
+    background-color: #ff5f56;
+    box-shadow: 0 0 5px #ff5f56;
+}
+
+.terminal-dot.yellow {
+    background-color: #ffbd2e;
+    box-shadow: 0 0 5px #ffbd2e;
+}
+
+.terminal-dot.green {
+    background-color: #27c93f;
+    box-shadow: 0 0 5px #27c93f;
+}
+
+.terminal-title {
+    color: var(--text-muted);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.terminal-body {
+    padding: 5vh 5vw;
+    color: var(--color-primary);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 20;
+}
+
+.terminal-lines-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
+}
+
+.terminal-line {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(0, 243, 255, 0.3);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-weight: 500;
+}
+
+.terminal-line.error {
+    color: #ff5f56;
+    text-shadow: 0 0 5px rgba(255, 95, 86, 0.4);
+}
+
+.terminal-line.success {
+    color: #27c93f;
+    text-shadow: 0 0 5px rgba(39, 201, 63, 0.4);
+}
+
+.terminal-line.highlight {
+    color: var(--color-secondary);
+    text-shadow: 0 0 8px rgba(188, 19, 254, 0.6);
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.terminal-line.highlight-large {
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px var(--color-primary);
+    font-size: 2rem;
+    font-weight: 800;
+    margin-top: 15px;
+    letter-spacing: 2px;
+}
+
+.prompt {
+    color: rgba(255, 255, 255, 0.5);
+    margin-right: 15px;
+    font-weight: normal;
+}
+
+.cursor-blink {
+    animation: blinkCursor 1s step-end infinite;
+    display: inline-block;
+    width: 12px;
+    height: 1.2rem;
+    background-color: var(--color-primary);
+    vertical-align: bottom;
+    margin-left: 5px;
+}
+
+@keyframes blinkCursor {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
+.progress-bar-wrapper {
+    flex-grow: 1;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary);
+    transition: width 0.1s linear;
+}
+
+.progress-text {
+    color: var(--color-primary);
+    font-weight: 300;
+    min-width: 60px;
+    text-align: right;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .terminal-body {
+        padding: 3vh 4vw;
+    }
+
+    .terminal-line {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+
+    .terminal-line.highlight-large {
+        font-size: 1.4rem;
+    }
+
+    .progress-container {
+        gap: 15px;
+    }
+
+    .progress-text {
+        font-size: 1rem;
+    }
+}
