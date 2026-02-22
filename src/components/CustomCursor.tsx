@@ -6,8 +6,20 @@ export default function CustomCursor() {
     const [position, setPosition] = useState({ x: -100, y: -100 });
     const [isPointer, setIsPointer] = useState(false);
     const [hidden, setHidden] = useState(false);
+    const [isTouchDevice, setIsTouchDevice] = useState(false);
 
     useEffect(() => {
+        // Check if device is a touch device (like phones/tablets)
+        const isTouch =
+            'ontouchstart' in window ||
+            navigator.maxTouchPoints > 0 ||
+            window.matchMedia('(pointer: coarse)').matches;
+
+        if (isTouch) {
+            setIsTouchDevice(true);
+            return;
+        }
+
         const moveMouse = (e: MouseEvent) => {
             setPosition({ x: e.clientX, y: e.clientY });
             setHidden(false);
@@ -55,7 +67,7 @@ export default function CustomCursor() {
         };
     }, []);
 
-    if (hidden) return null;
+    if (hidden || isTouchDevice) return null;
 
     return (
         <div
