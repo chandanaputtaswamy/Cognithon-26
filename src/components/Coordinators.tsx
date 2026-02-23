@@ -3,6 +3,11 @@ import '../styles/Coordinators.css';
 
 import ashaImg from '../assets/asha.jpeg';
 import bharthiImg from '../assets/bharthi.jpeg';
+import abhignaImg from '../assets/Abhigna Shankar.png';
+import rachanaImg from '../assets/Rachana S Jadhav.png';
+import shivaniImg from '../assets/Shivani K S.png';
+import chandanaImg from '../assets/Chandana P.png';
+import chinmayaImg from '../assets/Chinmaya.png';
 
 import { FaLinkedin } from 'react-icons/fa';
 
@@ -13,6 +18,7 @@ interface Coordinator {
     image: string;
     phone: string;
     linkedin?: string;
+    imagePosition?: string;
 }
 
 const facultyCoordinators: Coordinator[] = [
@@ -45,17 +51,19 @@ const technicalCrew: Coordinator[] = [
         id: 3,
         name: "Chandana P",
         role: "Technical Crew",
-        image: "https://via.placeholder.com/150",
+        image: chandanaImg,
         phone: "9535580546",
-        linkedin: "https://www.linkedin.com/in/chandana-puttaswamy/"
+        linkedin: "https://www.linkedin.com/in/chandana-puttaswamy/",
+        imagePosition: "center 20%"
     },
     {
         id: 4,
         name: "Chinmaya",
         role: "Technical Crew",
-        image: "https://via.placeholder.com/150",
+        image: chinmayaImg,
         phone: "+91 84310 27914",
-        linkedin: "https://www.linkedin.com/in/chinmaya-bhagya-2a42392a3/"
+        linkedin: "https://www.linkedin.com/in/chinmaya-bhagya-2a42392a3/",
+        imagePosition: "center 20%"
     }
 ];
 
@@ -64,25 +72,28 @@ const marketingDesignCrew: Coordinator[] = [
         id: 1,
         name: "Abhigna Shankar",
         role: "Marketing and Design Crew",
-        image: "https://via.placeholder.com/150",
+        image: abhignaImg,
         phone: "+91 93539 04413",
-        linkedin: "https://www.linkedin.com/in/abhigna-shankar-6610812a3/"
+        linkedin: "https://www.linkedin.com/in/abhigna-shankar-6610812a3/",
+        imagePosition: "center 20%"
     },
     {
         id: 5,
         name: "Rachana S Jadhav",
         role: "Marketing and Design Crew",
-        image: "https://via.placeholder.com/150",
+        image: rachanaImg,
         phone: "+91 93538 31153",
-        linkedin: "https://www.linkedin.com/in/rachana-s-jadhav-819a55291/"
+        linkedin: "https://www.linkedin.com/in/rachana-s-jadhav-819a55291/",
+        imagePosition: "center 10%"
     },
     {
         id: 6,
         name: "Shivani K S",
         role: "Marketing and Design Crew",
-        image: "https://via.placeholder.com/150",
+        image: shivaniImg,
         phone: "+91 831 058 8558",
-        linkedin: "https://www.linkedin.com/in/shivani-k-s-2832392a3/"
+        linkedin: "https://www.linkedin.com/in/shivani-k-s-2832392a3/",
+        imagePosition: "center 20%"
     }
 ];
 
@@ -96,7 +107,12 @@ const CoordinatorCard = ({ coordinator }: { coordinator: Coordinator }) => (
         whileHover={{ y: -5 }}
     >
         <div className="coordinator-image-container">
-            <img src={coordinator.image} alt={coordinator.name} className="coordinator-image" />
+            <img
+                src={coordinator.image}
+                alt={coordinator.name}
+                className="coordinator-image"
+                style={{ objectPosition: coordinator.imagePosition || 'center' }}
+            />
         </div>
         {coordinator.linkedin && (
             <a
