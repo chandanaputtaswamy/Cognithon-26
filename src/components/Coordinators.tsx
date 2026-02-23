@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import '../styles/Coordinators.css';
 
-import ashaImg from '../assets/asha.jpeg';
-import bharthiImg from '../assets/bharthi.jpeg';
+import ashaImg from '../assets/asha-nobg.png';
+import bharthiImg from '../assets/bharthi-nobg.png';
 import abhignaImg from '../assets/Abhigna Shankar.png';
 import rachanaImg from '../assets/Rachana S Jadhav.png';
 import shivaniImg from '../assets/Shivani K S.png';
@@ -27,14 +27,16 @@ const facultyCoordinators: Coordinator[] = [
         name: "Dr. Asha M",
         role: "Associate Professor, Dept. of AI&DS, GSSSIETW, Mysuru.",
         image: ashaImg,
-        phone: "+91 9886135756"
+        phone: "+91 9886135756",
+        imagePosition: "center 20%"
     },
     {
         id: 2,
         name: "Dr. Bharathi R",
         role: "Assistant Professor,  Dept. of AI&DS, GSSSIETW, Mysuru.",
         image: bharthiImg,
-        phone: "+91 9986955155"
+        phone: "+91 9986955155",
+        imagePosition: "center 20%"
     }
 ];
 
