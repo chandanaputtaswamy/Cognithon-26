@@ -5,7 +5,7 @@
             "name": "Dr. Sarah Connor",
             "role": "Chief AI Scientist",
             "company": "Skynet Corp",
-            "image": "https://placehold.co/150",
+            "image": "https://via.placeholder.com/150",
             "linkedin": "#"
         },
         {
@@ -13,7 +13,7 @@
             "name": "John Doe",
             "role": "CTO",
             "company": "TechFusion",
-            "image": "https://placehold.co/150",
+            "image": "https://via.placeholder.com/150",
             "linkedin": "#"
         }
     ],
@@ -23,14 +23,14 @@
             "name": "Jane Smith",
             "role": "Senior Dev",
             "expertise": "React, Node.js",
-            "image": "https://placehold.co/150"
+            "image": "https://via.placeholder.com/150"
         },
         {
             "id": 2,
             "name": "Mike Ross",
             "role": "Product Manager",
             "expertise": "UX/UI, Product Strategy",
-            "image": "https://placehold.co/150"
+            "image": "https://via.placeholder.com/150"
         }
     ]
 }

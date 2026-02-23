@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import CountdownTimer from './CountdownTimer';
+import gsssLogo from '../assets/GSSSlogo.png';
 import '../styles/Hero.css';
 
 const Hero = () => {
@@ -21,6 +22,30 @@ const Hero = () => {
                         transition={{ duration: 0.8 }}
                         className="hero-inner"
                     >
+                        <div className="hero-top-logos">
+                            <div
+                                className="hero-top-logo-1"
+                                style={{
+                                    WebkitMaskImage: `url(${gsssLogo})`,
+                                    WebkitMaskSize: 'contain',
+                                    WebkitMaskRepeat: 'no-repeat',
+                                    WebkitMaskPosition: 'center',
+                                    maskImage: `url(${gsssLogo})`,
+                                    maskSize: 'contain',
+                                    maskRepeat: 'no-repeat',
+                                    maskPosition: 'center',
+                                    backgroundColor: 'var(--color-primary)'
+                                }}
+                            />
+                            <div className="hero-top-text-group">
+                                <h2 className="hero-top-text-gsss">GSSS</h2>
+                                <div className="hero-top-text-ietw">
+                                    <span>INSTITUTE OF ENGINEERING</span>
+                                    <span>AND TECHNOLOGY FOR WOMEN</span>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 className="hero-department-title">DEPARTMENT OF ARTIFICIAL INTELLIGENCE AND DATA SCIENCE</h3>
                         <span className="hero-badge">April 10th and 11th - GSSSIETW, Mysuru</span>
                         <div className="hero-main-title-group">
                             <img src="/favicon.png" alt="Cognithon Logo" className="hero-logo-large" />

@@ -51,6 +51,11 @@
 .hero-right-col {
     display: flex;
     justify-content: flex-end;
+    /* Move timer rightwards to align better */
+    margin-right: -20rem;
+    /* Pull it entirely to the right edge */
+    margin-top: 8rem;
+    /* Push the timer downward per user sketch */
     align-items: center;
     width: 100%;
 }
@@ -62,6 +67,73 @@
     margin-bottom: 2rem;
 }
 
+.hero-top-logos {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    /* remove global gap */
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+}
+
+.hero-top-logo-1 {
+    height: 85px;
+    width: 85px;
+    margin-right: 1.5rem;
+    /* add gap specifically here */
+}
+
+.hero-top-text-group {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    color: var(--color-primary);
+}
+
+.hero-top-text-gsss {
+    font-size: 5.0rem;
+    font-weight: 800;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+
+.hero-top-text-ietw {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.5px;
+}
+
+.hero-department-title {
+    color: var(--color-secondary);
+    font-size: 1.75rem;
+    /* Increased font size (~15%) */
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(188, 19, 254, 0.4);
+    text-transform: uppercase;
+    margin-top: 2.0rem;
+    /* Push down exactly away from top logos */
+    margin-bottom: 1.5rem;
+    white-space: nowrap;
+    /* keep on one line as requested */
+    align-self: flex-start;
+    /* move out of center constraint to push arbitrarily */
+    margin-left: 22rem;
+    /* Cleanly align under the institute name (logo width + gap) */
+}
+
+@media (max-width: 768px) {
+    .hero-department-title {
+        margin-left: 0;
+    }
+}
+
 .hero-badge {
     position: relative;
     display: inline-block;
@@ -71,9 +143,11 @@
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: 2px;
-    margin-bottom: 2rem;
-    margin-top: 0;
-    /* Removed for tighter fit */
+    margin-bottom: -1rem;
+    /* bring closer to logo */
+    margin-top: 2.0rem;
+    /* Perfectly center the prior department element */
+    /* push down entirely */
 
     background: transparent;
     /* Transparent to let pseudo elements show */
@@ -299,6 +373,45 @@
     .hero-inner {
         align-items: center;
         /* Center everything flex-wise */
+    }
+
+    .hero-top-logos {
+        justify-content: center;
+        gap: 0;
+        /* remove global gap */
+        margin-top: 0;
+        margin-bottom: 1rem;
+    }
+
+    .hero-top-logo-1 {
+        height: 60px;
+        width: 60px;
+        margin-right: 0.8rem;
+    }
+
+    .hero-top-text-group {
+        gap: 0.8rem;
+    }
+
+    .hero-top-text-gsss {
+        font-size: 2.8rem;
+    }
+
+    .hero-top-text-ietw {
+        font-size: 0.9rem;
+    }
+
+    .hero-department-title {
+        font-size: 0.9rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        white-space: normal;
+        /* Allow wrapping on small screens to prevent overflow */
+        text-align: center;
+        letter-spacing: 1px;
+        align-self: center;
+        margin-left: 0;
+        /* Reset nudge on mobile */
     }
 
     .hero-main-title-group {
