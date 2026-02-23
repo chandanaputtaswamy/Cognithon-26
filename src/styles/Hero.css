@@ -368,6 +368,12 @@
 
     .hero-countdown-mobile {
         display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2rem;
+        transform: scale(0.9);
+        /* Prevent overflowing screen width */
     }
 
     .hero-inner {
@@ -391,6 +397,7 @@
 
     .hero-top-text-group {
         gap: 0.8rem;
+        text-align: center;
     }
 
     .hero-top-text-gsss {
@@ -399,19 +406,24 @@
 
     .hero-top-text-ietw {
         font-size: 0.9rem;
+        align-items: center;
     }
 
     .hero-department-title {
         font-size: 0.9rem;
         margin-top: 1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         white-space: normal;
         /* Allow wrapping on small screens to prevent overflow */
         text-align: center;
         letter-spacing: 1px;
         align-self: center;
         margin-left: 0;
-        /* Reset nudge on mobile */
+        margin-right: 0;
+        width: 100%;
+        /* Force centering within container */
+        padding: 0 1rem;
+        box-sizing: border-box;
     }
 
     .hero-main-title-group {
