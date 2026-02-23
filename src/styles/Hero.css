@@ -27,13 +27,18 @@
 }
 
 .hero-content {
-    max-width: 1200px;
-    /* Increased to allow wider layout like navbar */
-    padding: 0 2rem;
-    /* Matches navbar container padding */
-    margin: 0;
+    max-width: 1400px;
+    padding: 0 4rem;
+    margin: 0 auto;
     z-index: 1;
-    text-align: left;
+    width: 100%;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
     width: 100%;
 }
 
@@ -41,6 +46,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+.hero-right-col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
 .hero-badge {
@@ -262,6 +274,16 @@
     .hero-content {
         text-align: center;
         padding: 0 1rem;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .hero-right-col {
+        justify-content: center;
+        margin-top: 1rem;
     }
 
     .hero-inner {
