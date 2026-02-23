@@ -348,8 +348,8 @@
         justify-content: center;
         padding-left: 0;
         text-align: center;
-        padding-top: 1rem;
-        /* Much smaller spacing from navbar */
+        padding-top: 6rem;
+        /* Increased spacing from navbar to prevent logo cutoff */
     }
 
     .hero-content {
