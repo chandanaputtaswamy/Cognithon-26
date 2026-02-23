@@ -43,6 +43,11 @@ const Hero = () => {
                             Where ideas rise, solutions shine, and women lead the way.
                         </p>
 
+                        {/* Mobile Only Countdown Timer */}
+                        <div className="hero-countdown-mobile">
+                            <CountdownTimer />
+                        </div>
+
                         <div className="hero-cta">
                             <a
                                 href="https://forms.gle/3afJzo9aP6hxweyZ8"

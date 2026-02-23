@@ -55,6 +55,13 @@
     width: 100%;
 }
 
+.hero-countdown-mobile {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
 .hero-badge {
     position: relative;
     display: inline-block;
@@ -282,8 +289,11 @@
     }
 
     .hero-right-col {
-        justify-content: center;
-        margin-top: 1rem;
+        display: none;
+    }
+
+    .hero-countdown-mobile {
+        display: flex;
     }
 
     .hero-inner {
