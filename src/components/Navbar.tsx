@@ -66,7 +66,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
                 <div onClick={() => scrollToSection('hero')} className="logo" style={{ cursor: 'pointer' }}>
-                    <img src="/favicon.png" alt="Cognithon Logo" className="nav-logo-img" />
+                    <img src="/favicon.jpg" alt="Cognithon Logo" className="nav-logo-img" />
                     COGNITHON<span>-26</span>
                 </div>
 
