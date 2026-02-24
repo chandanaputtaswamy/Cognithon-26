@@ -98,7 +98,7 @@ const Hero = () => {
                                 }}
                                 className="btn btn-outline"
                             >
-                                View Problem Statements
+                                View Problem Statement
                             </button>
                         </div>
                     </motion.div>

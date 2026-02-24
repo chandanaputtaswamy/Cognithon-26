@@ -40,6 +40,16 @@ const ProblemCard = ({ problem }: { problem: Problem }) => {
                         <li>Include system architecture, tools/technologies, and feasibility.</li>
                         <li>Show innovation, practicality, and impact.</li>
                     </ul>
+
+                    <div style={{ marginTop: '2.5rem' }}>
+                        <a
+                            href="https://docs.google.com/presentation/d/1KsPHwEejnfj_f0n6PsUnApB4uwi2NZ1s/export/pptx"
+                            className="btn idea-template-btn"
+                            download
+                        >
+                            Idea Template
+                        </a>
+                    </div>
                 </div>
             </div>
         </motion.div>
