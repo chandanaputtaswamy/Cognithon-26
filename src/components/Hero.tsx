@@ -86,7 +86,14 @@ const Hero = () => {
                                 onClick={() => {
                                     const element = document.getElementById('featured-problem');
                                     if (element) {
-                                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                        const navHeight = 70; // Height of the fixed navbar
+                                        const elementPosition = element.getBoundingClientRect().top;
+                                        const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+                                        window.scrollTo({
+                                            top: offsetPosition,
+                                            behavior: 'smooth'
+                                        });
                                     }
                                 }}
                                 className="btn btn-outline"
