@@ -8,6 +8,7 @@ import rachanaImg from '../assets/Rachana S Jadhav.png';
 import shivaniImg from '../assets/Shivani K S.png';
 import chandanaImg from '../assets/Chandana P.png';
 import chinmayaImg from '../assets/Chinmaya.png';
+import ananyaImg from '../assets/ananya.png';
 
 import { FaLinkedin } from 'react-icons/fa';
 
@@ -45,9 +46,10 @@ const technicalCrew: Coordinator[] = [
         id: 2,
         name: "Ananya S",
         role: "Technical Crew",
-        image: "https://via.placeholder.com/150",
+        image: ananyaImg,
         phone: "+91 76767 79427",
-        linkedin: "https://www.linkedin.com/in/ananya-s-bb87482a2/"
+        linkedin: "https://www.linkedin.com/in/ananya-s-bb87482a2/",
+        imagePosition: "center 20%"
     },
     {
         id: 3,
