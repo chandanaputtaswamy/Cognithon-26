@@ -41,21 +41,25 @@ const Navbar = () => {
             return;
         }
 
-        if (id === 'hero') {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-            const element = document.getElementById(id);
-            if (element) {
-                const navHeight = 70;
-                const elementPosition = element.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+        // Delay scroll slightly to allow the mobile menu closing animation to start
+        // This prevents the scroll action from being cancelled on some mobile browsers
+        setTimeout(() => {
+            if (id === 'hero') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const element = document.getElementById(id);
+                if (element) {
+                    const navHeight = 70;
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navHeight;
 
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
-        }
+        }, 150);
     };
 
     return (
@@ -97,12 +101,13 @@ const Navbar = () => {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         className="mobile-menu"
+                        style={{ overflow: 'hidden' }}
                     >
                         {navLinks.map((link) => (
                             <button
                                 key={link.title}
                                 className="nav-link"
-                                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', width: '100%', textAlign: 'left' }}
+                                style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', width: '100%', textAlign: 'left', padding: '1rem 0' }}
                                 onClick={() => scrollToSection(link.id)}
                             >
                                 {link.title}
