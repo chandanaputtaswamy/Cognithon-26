@@ -1,11 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import cursor1 from '../assets/cursor1.png';
 import cursor2 from '../assets/cursor2.png';
 
 export default function CustomCursor() {
-    const [position, setPosition] = useState({ x: -100, y: -100 });
+    const cursorRef = useRef<HTMLDivElement>(null);
     const [isPointer, setIsPointer] = useState(false);
-    const [hidden, setHidden] = useState(false);
+    const [hidden, setHidden] = useState(true);
     const [isTouchDevice, setIsTouchDevice] = useState(false);
 
     useEffect(() => {
@@ -21,7 +21,10 @@ export default function CustomCursor() {
         }
 
         const moveMouse = (e: MouseEvent) => {
-            setPosition({ x: e.clientX, y: e.clientY });
+            if (cursorRef.current) {
+                // Use hardware accelerated transform instead of state updates to avoid React re-renders
+                cursorRef.current.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0) translate(-10%, -10%)`;
+            }
             setHidden(false);
         };
 
@@ -51,8 +54,9 @@ export default function CustomCursor() {
             }
         };
 
-        window.addEventListener('mousemove', moveMouse);
-        window.addEventListener('mouseover', handleMouseOver);
+        // Use { passive: true } for performance gains
+        window.addEventListener('mousemove', moveMouse, { passive: true });
+        window.addEventListener('mouseover', handleMouseOver, { passive: true });
         document.documentElement.addEventListener('mouseleave', handleMouseLeave);
         document.documentElement.addEventListener('mouseenter', handleMouseEnter);
 
@@ -67,14 +71,15 @@ export default function CustomCursor() {
         };
     }, []);
 
-    if (hidden || isTouchDevice) return null;
+    if (isTouchDevice) return null;
 
     return (
         <div
+            ref={cursorRef}
             style={{
                 position: 'fixed',
-                left: position.x,
-                top: position.y,
+                left: 0,
+                top: 0,
                 width: '24px',
                 height: '24px',
                 pointerEvents: 'none',
@@ -82,8 +87,10 @@ export default function CustomCursor() {
                 backgroundImage: `url(${isPointer ? cursor2 : cursor1})`,
                 backgroundSize: 'contain',
                 backgroundRepeat: 'no-repeat',
-                transform: 'translate(-10%, -10%)',
-                transition: 'background-image 0.1s ease',
+                transform: 'translate3d(-100px, -100px, 0) translate(-10%, -10%)',
+                opacity: hidden ? 0 : 1,
+                transition: 'background-image 0.1s ease, opacity 0.2s ease', // Target specific transitions instead of all
+                willChange: 'transform', // Hint browser to optimize this layer for transform
             }}
         />
     );
