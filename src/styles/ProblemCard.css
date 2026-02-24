@@ -125,3 +125,10 @@
     color: #000;
     box-shadow: 0 0 15px var(--color-primary);
 }
+
+@media (max-width: 768px) {
+    .idea-template-btn {
+        width: max-content !important;
+        /* override universal mobile .btn full-width stretch */
+    }
+}
