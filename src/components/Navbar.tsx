@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import logo1 from '../assets/logo1.png';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -66,7 +67,7 @@ const Navbar = () => {
         <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
             <div className="navbar-container">
                 <div onClick={() => scrollToSection('hero')} className="logo" style={{ cursor: 'pointer' }}>
-                    <img src="/favicon.jpg" alt="Cognithon Logo" className="nav-logo-img" />
+                    <img src={logo1} alt="Cognithon Logo" className="nav-logo-img" />
                     COGNITHON<span>-26</span>
                 </div>
 
