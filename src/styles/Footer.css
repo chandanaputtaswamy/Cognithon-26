@@ -77,3 +77,14 @@
     color: var(--text-muted);
     font-size: 0.8rem;
 }
+
+.footer-bottom p a {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer-bottom p a:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}

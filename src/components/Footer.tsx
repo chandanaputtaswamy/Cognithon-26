@@ -61,7 +61,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>&copy; 2026 Cognithon. All rights reserved. Website developed by Chandana and Chinmaya.</p>
+                <p>&copy; 2026 Cognithon. All rights reserved. Website developed by <a href="https://www.linkedin.com/in/chandana-puttaswamy/" target="_blank" rel="noopener noreferrer">Chandana</a> and <a href="https://www.linkedin.com/in/chinmaya-bhagya-2a42392a3/" target="_blank" rel="noopener noreferrer">Chinmaya</a>.</p>
             </div>
         </footer>
     );
