@@ -84,7 +84,8 @@
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
-    background: linear-gradient(90deg, transparent, rgba(188, 19, 254, 0.1), rgba(0, 243, 255, 0.1), rgba(188, 19, 254, 0.1), transparent);
+    background-color: rgba(0, 0, 0, 0.8);
+    background-image: linear-gradient(90deg, transparent, rgba(188, 19, 254, 0.15), rgba(0, 243, 255, 0.15), rgba(188, 19, 254, 0.15), transparent);
     padding: 0.8rem 0;
     border-top: 1px solid rgba(0, 243, 255, 0.15);
     border-bottom: 1px solid rgba(0, 243, 255, 0.15);
