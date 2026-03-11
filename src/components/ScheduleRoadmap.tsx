@@ -33,7 +33,7 @@ const milestones: Milestone[] = [
     {
         time: "Phase 2",
         title: "Registration Closes",
-        description: "12-03-2026, Thursday",
+        description: "20-03-2026, Friday",
         icon: <FaRegCalendarTimes />,
         x: 32.5,
         y: 65 // Valley
@@ -41,7 +41,7 @@ const milestones: Milestone[] = [
     {
         time: "Phase 3",
         title: "Shortlisting Announcement",
-        description: "20-03-2026, Friday",
+        description: "25-03-2026, Wednesday",
         icon: <FaRegBell />,
         x: 50,
         y: 35 // Peak
