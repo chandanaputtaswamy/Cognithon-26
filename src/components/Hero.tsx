@@ -15,7 +15,7 @@ const Hero = () => {
         <section className="hero-container">
             <div className="hero-marquee-wrapper">
                 <div className="hero-marquee-text">
-                    LAST DATE TO REGISTER HAS BEEN EXTENDED TILL 12TH MARCH 2026 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    LAST DATE TO REGISTER HAS BEEN EXTENDED TILL 20TH MARCH 2026 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 </div>
             </div>
 
