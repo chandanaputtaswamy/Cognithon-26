@@ -41,7 +41,7 @@ const milestones: Milestone[] = [
     {
         time: "Phase 3",
         title: "Shortlisting Announcement",
-        description: "19-03-2026, Thursday",
+        description: "20-03-2026, Friday",
         icon: <FaRegBell />,
         x: 50,
         y: 35 // Peak
