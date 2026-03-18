@@ -33,7 +33,7 @@ const milestones: Milestone[] = [
     {
         time: "Phase 2",
         title: "Registration Closes",
-        description: "20-03-2026, Friday",
+        description: "24-03-2026, Friday",
         icon: <FaRegCalendarTimes />,
         x: 32.5,
         y: 65 // Valley
