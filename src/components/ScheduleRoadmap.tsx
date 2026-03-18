@@ -40,8 +40,8 @@ const milestones: Milestone[] = [
     },
     {
         time: "Phase 3",
-        title: "Shortlisting Announcement",
-        description: "25-03-2026, Wednesday",
+        title: "Shortlisting",
+        description: "Ongoing",
         icon: <FaRegBell />,
         x: 50,
         y: 35 // Peak
