@@ -103,12 +103,8 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 3px;
-    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-primary));
-    background-size: 200% auto;
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.4));
+    color: #ff0000;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 0, 0.4));
 }
 
 @keyframes marquee {
