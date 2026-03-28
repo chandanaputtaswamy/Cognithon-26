@@ -19,6 +19,7 @@ interface Milestone {
     icon: React.ReactNode;
     x: number; // Percentage from left
     y: number; // Percentage from top
+    targetId?: string; // Optional ID to scroll to when clicked
 }
 
 const milestones: Milestone[] = [
@@ -44,7 +45,8 @@ const milestones: Milestone[] = [
         description: "28-03-2026, Saturday",
         icon: <FaRegBell />,
         x: 50,
-        y: 35 // Peak
+        y: 35, // Peak
+        targetId: "selected-teams"
     },
     {
         time: "Phase 4",
@@ -85,6 +87,21 @@ const ScheduleRoadmap = () => {
         path += ` L 1200 ${startY}`;
 
         return path;
+    };
+
+    const handleMilestoneClick = (targetId?: string) => {
+        if (!targetId) return;
+        const element = document.getElementById(targetId);
+        if (element) {
+            const navHeight = 80;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
     };
 
 
@@ -143,8 +160,10 @@ const ScheduleRoadmap = () => {
                             className={`milestone-node ${index % 2 === 0 ? 'milestone-node--bottom' : 'milestone-node--top'}`}
                             style={{
                                 left: `${milestone.x}%`,
-                                top: `${milestone.y}%`
+                                top: `${milestone.y}%`,
+                                cursor: milestone.targetId ? 'pointer' : 'default'
                             }}
+                            onClick={() => handleMilestoneClick(milestone.targetId)}
 
                             initial={{ opacity: 0, scale: 0.5 }}
                             whileInView={{ opacity: 1, scale: 1 }}
