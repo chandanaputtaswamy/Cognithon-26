@@ -17,7 +17,7 @@ interface TimelineProps {
 const defaultRoadmapData: TimelineEvent[] = [
     { title: "Registrations Open", description: "Register your team and start your journey.", icon: "📝" },
     { title: "Idea Submission", description: "Submit your innovative solutions.", icon: "💡" },
-    { title: "Shortlisting Teams", description: "Top teams selected for the finale.", icon: "✅" },
+    { title: "Shortlisted Team", description: "Top teams selected for the finale.", icon: "✅" },
     { title: "Mentorship Round", description: "Expert guidance to refine your ideas.", icon: "👨‍🏫" },
     { title: "Final Hack Day", description: "24-hour coding marathon begins.", icon: "🚀" },
     { title: "Judging & Results", description: "Pitch to judges and win big.", icon: "🏆" }
