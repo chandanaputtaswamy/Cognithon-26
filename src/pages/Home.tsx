@@ -15,6 +15,7 @@ import Coordinators from '../components/Coordinators';
 import Guidelines from '../components/Guidelines';
 import FAQ from '../components/FAQ';
 import EventHighlights from '../components/EventHighlights';
+import SelectedTeams from '../components/SelectedTeams';
 
 const Home = () => {
     const location = useLocation();
@@ -102,6 +103,10 @@ const Home = () => {
                         </div>
                     ))}
                 </div>
+            </Section>
+
+            <Section id="selected-teams" title="Selected Teams" subtitle="CONGRATULATIONS TO OUR TOP 30">
+                <SelectedTeams />
             </Section>
 
             <Section id="guidelines" title="Hackathon Guidelines" subtitle="RULES & REGULATIONS">
