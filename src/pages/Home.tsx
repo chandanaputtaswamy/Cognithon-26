@@ -2,13 +2,11 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Section from '../components/Section';
-import ProblemCard from '../components/ProblemCard';
 import ScheduleRoadmap from '../components/ScheduleRoadmap';
 
 // import { Link } from 'react-router-dom';
 
 import eventsData from '../data/events.json';
-import problemsData from '../data/problemStatements.json';
 
 import Sponsors from '../components/Sponsors';
 import Coordinators from '../components/Coordinators';
@@ -94,16 +92,6 @@ const Home = () => {
                 <EventHighlights />
             </Section>
 
-            <Section id="featured-problem" title="Featured Problem" subtitle="SOLVE REAL WORLD CHALLENGES">
-                <div style={{ display: 'flex', justifyContent: 'center' }}>
-                    {problemsData.map((problem) => (
-                        <div key={problem.id} style={{ maxWidth: '800px', width: '100%' }}>
-                            <ProblemCard problem={problem} />
-
-                        </div>
-                    ))}
-                </div>
-            </Section>
 
             <Section id="selected-teams" title="Selected Teams" subtitle="CONGRATULATIONS TO OUR TOP 30">
                 <SelectedTeams />

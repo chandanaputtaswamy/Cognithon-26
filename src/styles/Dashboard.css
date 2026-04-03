@@ -1,0 +1,250 @@
+/* =====================================================
+   DASHBOARD PAGE STYLES
+   ===================================================== */
+
+.dashboard-container {
+  min-height: 100vh;
+  padding: 8rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background glows */
+.dashboard-bg-glow {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, rgba(0, 243, 255, 0.08) 0%, rgba(188, 19, 254, 0.05) 40%, transparent 65%);
+  z-index: 0;
+  pointer-events: none;
+  animation: dashGlowPulse 8s ease-in-out infinite alternate;
+}
+
+.dashboard-bg-glow-2 {
+  top: 70%;
+  left: 70%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(188, 19, 254, 0.07) 0%, transparent 60%);
+  animation-delay: 4s;
+}
+
+@keyframes dashGlowPulse {
+  from { opacity: 0.7; transform: translate(-50%, -50%) scale(1); }
+  to   { opacity: 1;   transform: translate(-50%, -50%) scale(1.08); }
+}
+
+/* ── Header ─────────────────────────────────────────── */
+.dashboard-header {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* Auth status badge */
+.dashboard-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 243, 255, 0.07);
+  border: 1px solid rgba(0, 243, 255, 0.25);
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #00f3ff;
+  margin-bottom: 1.2rem;
+}
+
+.dashboard-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00f3ff;
+  box-shadow: 0 0 8px #00f3ff;
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+.dashboard-title {
+  font-family: 'Outfit', sans-serif;
+  font-size: 3.4rem;
+  font-weight: 800;
+  margin-bottom: 0.6rem;
+  background: linear-gradient(135deg, #ffffff 30%, #00f3ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  filter: drop-shadow(0 0 15px rgba(0, 243, 255, 0.2));
+  letter-spacing: -1px;
+}
+
+.dashboard-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 1px;
+  margin-bottom: 0.3rem;
+  font-weight: 300;
+}
+
+.dashboard-email {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+}
+
+/* ── Problem Statement Card ─────────────────────────── */
+.dashboard-ps-wrapper {
+  width: 100%;
+  max-width: 860px;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-ps-card {
+  background: rgba(8, 8, 14, 0.82);
+  border: 1px solid rgba(188, 19, 254, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 16px 64px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(255, 255, 255, 0.035) inset,
+    0 0 40px rgba(188, 19, 254, 0.06);
+  backdrop-filter: blur(18px);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.dashboard-ps-card:hover {
+  border-color: rgba(188, 19, 254, 0.45);
+  box-shadow:
+    0 20px 80px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset,
+    0 0 60px rgba(188, 19, 254, 0.12);
+}
+
+/* Card header strip */
+.dashboard-ps-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.4rem 2rem;
+  background: rgba(188, 19, 254, 0.07);
+  border-bottom: 1px solid rgba(188, 19, 254, 0.15);
+}
+
+.dashboard-ps-icon {
+  font-size: 1.4rem;
+  filter: drop-shadow(0 0 8px rgba(188, 19, 254, 0.6));
+}
+
+.dashboard-ps-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: rgba(188, 19, 254, 0.85);
+}
+
+/* Divider */
+.dashboard-ps-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(188, 19, 254, 0.3) 30%, rgba(0, 243, 255, 0.3) 70%, transparent);
+}
+
+/* Content area */
+.dashboard-ps-content {
+  padding: 3rem 2.5rem;
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-ps-text {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: #f0f0f0;
+  line-height: 1.7;
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+/* Footer note */
+.dashboard-ps-footer {
+  padding: 1rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.dashboard-ps-note {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.3);
+  text-align: center;
+  display: block;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+/* ── Actions ─────────────────────────────────────────── */
+.dashboard-actions {
+  margin-top: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.dashboard-logout-btn {
+  padding: 0.7rem 2.2rem;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.45);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Outfit', sans-serif;
+}
+
+.dashboard-logout-btn:hover {
+  border-color: rgba(255, 80, 80, 0.5);
+  color: #ff6060;
+  background: rgba(255, 60, 60, 0.06);
+  box-shadow: 0 0 18px rgba(255, 60, 60, 0.12);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  .dashboard-title {
+    font-size: 2.2rem;
+  }
+
+  .dashboard-ps-header {
+    padding: 1rem 1.2rem;
+  }
+
+  .dashboard-ps-content {
+    padding: 2rem 1.2rem;
+  }
+
+  .dashboard-ps-text {
+    font-size: 1.15rem;
+  }
+}

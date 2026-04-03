@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import CountdownTimer from './CountdownTimer';
 import gsssLogo from '../assets/GSSSlogo.png';
+import { Link } from 'react-router-dom';
 import '../styles/Hero.css';
 
 const Hero = () => {
@@ -80,14 +81,12 @@ const Hero = () => {
                         </div>
 
                         <div className="hero-cta">
-                            <a
-                                href="https://forms.gle/3afJzo9aP6hxweyZ8"
+                            <Link
+                                to="/login"
                                 className="btn btn-primary"
-                                target="_blank"
-                                rel="noopener noreferrer"
                             >
-                                Register Now
-                            </a>
+                                Login
+                            </Link>
                             <button
                                 onClick={() => {
                                     const element = document.getElementById('featured-problem');

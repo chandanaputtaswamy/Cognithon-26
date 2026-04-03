@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo1 from '../assets/logo1.png';
 import '../styles/Navbar.css';
@@ -8,8 +8,13 @@ import '../styles/Navbar.css';
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
+    const [isAuth, setIsAuth] = useState(false);
     const navigate = useNavigate();
     const location = useLocation();
+
+    useEffect(() => {
+        setIsAuth(localStorage.getItem('isAuthenticated') === 'true');
+    }, [location.pathname]);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,10 +34,17 @@ const Navbar = () => {
     const navLinks = [
         { title: 'Home', id: 'hero' },
         { title: 'About', id: 'about' },
-        { title: 'Problems', id: 'featured-problem' },
+        { title: 'Problems', id: '__problems__' },
         { title: 'Timeline', id: 'schedule' },
         { title: 'FAQ', id: 'faq' }
     ];
+
+    // Problems nav item: go to dashboard if logged in, else go to login
+    const handleProblemsClick = () => {
+        if (isOpen) setIsOpen(false);
+        navigate(isAuth ? '/dashboard' : '/login');
+    };
+
 
     const scrollToSection = (id: string) => {
         if (isOpen) setIsOpen(false);
@@ -78,14 +90,25 @@ const Navbar = () => {
                             key={link.title}
                             className="nav-link"
                             style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit' }}
-                            onClick={() => scrollToSection(link.id)}
+                            onClick={() => link.id === '__problems__' ? handleProblemsClick() : scrollToSection(link.id)}
                         >
                             {link.title}
                         </button>
                     ))}
-                    <a href="https://forms.gle/3afJzo9aP6hxweyZ8" className="register-btn" target="_blank" rel="noopener noreferrer">
-                        Register Now
-                    </a>
+                    {isAuth ? (
+                        <button className="register-btn" onClick={() => {
+                            sessionStorage.clear();
+                            localStorage.removeItem('isAuthenticated');
+                            setIsAuth(false);
+                            navigate('/');
+                        }} style={{ font: 'inherit', cursor: 'pointer', fontWeight: 'bold' }}>
+                            Logout
+                        </button>
+                    ) : (
+                        <Link to="/login" className="register-btn">
+                            Login
+                        </Link>
+                    )}
                 </div>
 
                 {/* Mobile Toggle */}
@@ -109,21 +132,35 @@ const Navbar = () => {
                                 key={link.title}
                                 className="nav-link"
                                 style={{ background: 'none', border: 'none', cursor: 'pointer', font: 'inherit', width: '100%', textAlign: 'left', padding: '1rem 0' }}
-                                onClick={() => scrollToSection(link.id)}
+                                onClick={() => link.id === '__problems__' ? handleProblemsClick() : scrollToSection(link.id)}
                             >
                                 {link.title}
                             </button>
                         ))}
-                        <a
-                            href="https://forms.gle/3afJzo9aP6hxweyZ8"
-                            className="register-btn"
-                            onClick={() => setIsOpen(false)}
-                            style={{ width: '100%', textAlign: 'center', display: 'block' }}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            Register Now
-                        </a>
+                        {isAuth ? (
+                            <button
+                                className="register-btn"
+                                onClick={() => {
+                                    sessionStorage.clear();
+                                    localStorage.removeItem('isAuthenticated');
+                                    setIsAuth(false);
+                                    navigate('/');
+                                    setIsOpen(false);
+                                }}
+                                style={{ width: '100%', textAlign: 'center', display: 'block', font: 'inherit', cursor: 'pointer', fontWeight: 'bold' }}
+                            >
+                                Logout
+                            </button>
+                        ) : (
+                            <Link
+                                to="/login"
+                                className="register-btn"
+                                onClick={() => setIsOpen(false)}
+                                style={{ width: '100%', textAlign: 'center', display: 'block' }}
+                            >
+                                Login
+                            </Link>
+                        )}
                     </motion.div>
                 )}
             </AnimatePresence>
