@@ -232,19 +232,44 @@
 
 /* ── Responsive ─────────────────────────────────────── */
 @media (max-width: 600px) {
+  .dashboard-container {
+    padding: 6rem 1rem 4rem;
+  }
+
   .dashboard-title {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
+  }
+
+  .dashboard-subtitle {
+    font-size: 1.25rem;
   }
 
   .dashboard-ps-header {
-    padding: 1rem 1.2rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .dashboard-ps-label {
+    font-size: 0.9rem;
   }
 
   .dashboard-ps-content {
-    padding: 2rem 1.2rem;
+    padding: 2.5rem 1.5rem;
   }
 
   .dashboard-ps-text {
-    font-size: 1.15rem;
+    font-size: 1.35rem;
+  }
+
+  .dashboard-ps-footer {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .dashboard-ps-note {
+    font-size: 0.85rem;
+  }
+
+  .dashboard-logout-btn {
+    font-size: 1rem;
+    padding: 0.9rem 2.5rem;
   }
 }

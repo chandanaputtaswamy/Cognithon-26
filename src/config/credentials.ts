@@ -19,7 +19,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 1
     panel: "Panel 1",
     email: "ridhivasudev970@gmail.com",
-    password: "password1",
+    password: "AlgoArchitects",
     teamName: "AlgoArchitects",
     problemStatement: "Multilingual Content Generation Crisis",
   },
@@ -27,7 +27,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 2
     panel: "Panel 1",
     email: "vvce24cse0437@vvce.ac.in",
-    password: "password2",
+    password: "SHECODES",
     teamName: "SHECODES",
     problemStatement: "Personalized Presentation Generation for Education",
   },
@@ -35,7 +35,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 3
     panel: "Panel 1",
     email: "bavithahbhegde06@gmail.com",
-    password: "password3",
+    password: "Blue Minds",
     teamName: "Blue Minds",
     problemStatement: "Offline AI Learning Platform for Rural Students",
   },
@@ -43,7 +43,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 4
     panel: "Panel 1",
     email: "vvce24cse0578@vvce.ac.in",
-    password: "password4",
+    password: "Data dynamos",
     teamName: "Data dynamos",
     problemStatement: "Teacher Performance Evaluation Gap",
   },
@@ -51,7 +51,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 5
     panel: "Panel 1",
     email: "sinchanaravi15@gmail.com",
-    password: "password5",
+    password: "Data Avengers",
     teamName: "Data Avengers",
     problemStatement: "Agentic AI for Securing Home Iot Devices Using Deception & Autonomous Defence",
   },
@@ -59,7 +59,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 6
     panel: "Panel 1",
     email: "bnaishwarya3@gmail.com",
-    password: "password6",
+    password: "Ctrl+she",
     teamName: "Ctrl+she",
     problemStatement: "Agentic AI for Deepfake Detection & Authenticity Verification",
   },
@@ -67,7 +67,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 7
     panel: "Panel 1",
     email: "sirip7289@gmail.com",
-    password: "password7",
+    password: "Code blooded",
     teamName: "Code blooded",
     problemStatement: "Smart Cities: Predictive AI for Air Quality Management",
   },
@@ -75,7 +75,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 8
     panel: "Panel 1",
     email: "sanvishetty152006@gmail.com",
-    password: "password8",
+    password: "The 'HACKERS'",
     teamName: "The 'HACKERS'",
     problemStatement: "Industrial Emission Control: AI & Satellite-Based Monitoring",
   },
@@ -83,7 +83,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 9
     panel: "Panel 1",
     email: "vvce24cse0364@vvce.ac.in",
-    password: "password9",
+    password: "TechFusion",
     teamName: "TechFusion",
     problemStatement: "Multi-Modal Disaster Response Agent",
   },
@@ -91,7 +91,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 10
     panel: "Panel 1",
     email: "spandanayogesh06@gmail.com",
-    password: "password10",
+    password: "NovaAlert",
     teamName: "NovaAlert",
     problemStatement: "Autonomous Edge-Case Traffic Agent",
   },
@@ -99,7 +99,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 11
     panel: "Panel 2",
     email: "kusuma6122006@gmail.com",
-    password: "password11",
+    password: "CodeX",
     teamName: "CodeX",
     problemStatement: "Multilingual Content Generation Crisis",
   },
@@ -107,7 +107,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 12
     panel: "Panel 2",
     email: "manasauttam@gmail.com",
-    password: "password12",
+    password: "Trendsetter Trio.",
     teamName: "Trendsetter Trio.",
     problemStatement: "Personalized Presentation Generation for Education",
   },
@@ -115,7 +115,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 13
     panel: "Panel 2",
     email: "tejaswinin693@gmail.com",
-    password: "password13",
+    password: "Smart Minds",
     teamName: "Smart Minds",
     problemStatement: "Offline AI Learning Platform for Rural Students",
   },
@@ -123,7 +123,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 14
     panel: "Panel 2",
     email: "harshnayak1357@gmail.com",
-    password: "password14",
+    password: "SkillNova",
     teamName: "SkillNova",
     problemStatement: "Teacher Performance Evaluation Gap",
   },
@@ -131,7 +131,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 15
     panel: "Panel 2",
     email: "rutikatuwar23@gmail.com",
-    password: "password15",
+    password: "Neural Nexus",
     teamName: "Neural Nexus",
     problemStatement: "Agentic AI for Securing Home Iot Devices Using Deception & Autonomous Defence",
   },
@@ -139,7 +139,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 16
     panel: "Panel 2",
     email: "akshithakotakonda0404@gmail.com",
-    password: "password16",
+    password: "Code Trio",
     teamName: "Code Trio",
     problemStatement: "Agentic AI for Deepfake Detection & Authenticity Verification",
   },
@@ -147,7 +147,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 17
     panel: "Panel 2",
     email: "keerthana.murugesan905@gmail.com",
-    password: "password17",
+    password: "Mind Cloud",
     teamName: "Mind Cloud",
     problemStatement: "Smart Cities: Predictive AI for Air Quality Management",
   },
@@ -155,7 +155,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 18
     panel: "Panel 2",
     email: "sahana132006@gmail.com",
-    password: "password18",
+    password: "TriNova",
     teamName: "TriNova",
     problemStatement: "Industrial Emission Control: AI & Satellite-Based Monitoring",
   },
@@ -163,7 +163,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 19
     panel: "Panel 2",
     email: "nandithamnanditha902@gmail.com",
-    password: "password19",
+    password: "Congnify Coders",
     teamName: "Congnify Coders",
     problemStatement: "Multi-Modal Disaster Response Agent",
   },
@@ -171,7 +171,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 20
     panel: "Panel 2",
     email: "aishani.a.penagondla@gmail.com",
-    password: "password20",
+    password: "Synapse Squad",
     teamName: "Synapse Squad",
     problemStatement: "Autonomous Edge-Case Traffic Agent",
   },
@@ -179,7 +179,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 21
     panel: "Panel 3",
     email: "hephzibah3105@gmail.com",
-    password: "password21",
+    password: "Tech MAVERICKS",
     teamName: "Tech MAVERICKS",
     problemStatement: "Multilingual Content Generation Crisis",
   },
@@ -187,7 +187,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 22
     panel: "Panel 3",
     email: "prakruthiananda381@gmail.com",
-    password: "password22",
+    password: "Spark defenders",
     teamName: "Spark defenders",
     problemStatement: "Personalized Presentation Generation for Education",
   },
@@ -195,7 +195,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 23
     panel: "Panel 3",
     email: "diyaballal1234@gmail.com",
-    password: "password23",
+    password: "UniSphere Innovators",
     teamName: "UniSphere Innovators",
     problemStatement: "Offline AI Learning Platform for Rural Students",
   },
@@ -203,7 +203,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 24
     panel: "Panel 3",
     email: "chandanakt1712@gmail.com",
-    password: "password24",
+    password: "TransitVertex",
     teamName: "TransitVertex",
     problemStatement: "Teacher Performance Evaluation Gap",
   },
@@ -211,7 +211,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 25
     panel: "Panel 3",
     email: "zurainaamber@gmail.com",
-    password: "password25",
+    password: "Idea Igniters",
     teamName: "Idea Igniters",
     problemStatement: "Agentic AI for Securing Home Iot Devices Using Deception & Autonomous Defence",
   },
@@ -219,7 +219,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 26
     panel: "Panel 3",
     email: "arpita.kavi79@gmail.com",
-    password: "password26",
+    password: "CodeFlux",
     teamName: "CodeFlux",
     problemStatement: "Agentic AI for Deepfake Detection & Authenticity Verification",
   },
@@ -227,7 +227,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 27
     panel: "Panel 3",
     email: "punyacgowda2004@gmail.com",
-    password: "password27",
+    password: "BuildIT",
     teamName: "BuildIT",
     problemStatement: "Smart Cities: Predictive AI for Air Quality Management",
   },
@@ -235,7 +235,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 28
     panel: "Panel 3",
     email: "pragathibasutkar@gmail.com",
-    password: "password28",
+    password: "RootX",
     teamName: "RootX",
     problemStatement: "Industrial Emission Control: AI & Satellite-Based Monitoring",
   },
@@ -243,7 +243,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 29
     panel: "Panel 3",
     email: "sreyanandi9@gmail.com",
-    password: "password29",
+    password: "TriNova",
     teamName: "TriNova",
     problemStatement: "Multi-Modal Disaster Response Agent",
   },
@@ -251,7 +251,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 30
     panel: "Panel 3",
     email: "hemalathass789@gmail.com",
-    password: "password30",
+    password: "TechSquad",
     teamName: "TechSquad",
     problemStatement: "Autonomous Edge-Case Traffic Agent",
   }
