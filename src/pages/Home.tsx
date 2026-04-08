@@ -7,6 +7,7 @@ import ScheduleRoadmap from '../components/ScheduleRoadmap';
 // import { Link } from 'react-router-dom';
 
 import eventsData from '../data/events.json';
+import invitationImg from '../assets/invitation.jpg';
 
 import Sponsors from '../components/Sponsors';
 import Coordinators from '../components/Coordinators';
@@ -92,6 +93,24 @@ const Home = () => {
                 <EventHighlights />
             </Section>
 
+            <Section id="invitation" title="Official Invitation" subtitle="JOIN US AT COGNITHON-26">
+                <div style={{ display: 'flex', justifyContent: 'center', width: '100%', padding: '0 1rem' }}>
+                    <img 
+                        src={invitationImg} 
+                        alt="Cognithon-26 Invitation" 
+                        style={{
+                            width: '100%',
+                            maxWidth: '794px', /* A4 width standard */
+                            height: 'auto',
+                            aspectRatio: '1 / 1.414', /* A4 proportion constraint */
+                            objectFit: 'contain',
+                            borderRadius: '10px',
+                            boxShadow: '0 15px 40px rgba(0,0,0,0.6), 0 0 30px rgba(0, 243, 255, 0.15)',
+                            border: '1px solid rgba(0, 243, 255, 0.2)'
+                        }} 
+                    />
+                </div>
+            </Section>
 
             <Section id="selected-teams" title="Selected Teams" subtitle="CONGRATULATIONS TO OUR TOP 30">
                 <SelectedTeams />

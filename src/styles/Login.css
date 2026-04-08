@@ -92,8 +92,8 @@
 
 .login-subtitle {
   text-align: center;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.4);
+  font-size: 1.1rem;
+  color: #ffffff;
   margin-bottom: 2rem;
   letter-spacing: 0.3px;
 }
@@ -113,8 +113,8 @@
 
 .login-label {
   font-family: 'Outfit', sans-serif;
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.95rem;
+  color: #ffffff;
   letter-spacing: 1.2px;
   text-transform: uppercase;
   font-weight: 500;
@@ -127,14 +127,14 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   color: #fff;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   font-family: inherit;
   box-sizing: border-box;
 }
 
 .login-input::placeholder {
-  color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .login-input:focus {
@@ -241,15 +241,15 @@
   }
 
   .login-subtitle {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .login-label {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .login-input {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     padding: 1.1rem 1rem;
   }
 

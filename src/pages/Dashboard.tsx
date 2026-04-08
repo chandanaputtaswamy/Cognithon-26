@@ -10,6 +10,9 @@ const Dashboard = () => {
     const [problemStatement, setProblemStatement] = useState('');
     const [teamEmail, setTeamEmail] = useState('');
     const [panel, setPanel] = useState('');
+    const [isLoading, setIsLoading] = useState(() => {
+        return sessionStorage.getItem('justLoggedIn') === 'true';
+    });
 
     useEffect(() => {
         // Auth guard: redirect to login if not authenticated
@@ -34,13 +37,31 @@ const Dashboard = () => {
             }
         }
         setPanel(storedPanel || '');
-    }, [navigate]);
+
+        // Preloader timer
+        if (isLoading) {
+            const timer = setTimeout(() => {
+                sessionStorage.removeItem('justLoggedIn');
+                setIsLoading(false);
+            }, 2000);
+            return () => clearTimeout(timer);
+        }
+    }, [navigate, isLoading]);
 
     const handleLogout = () => {
         sessionStorage.clear();
         localStorage.removeItem('isAuthenticated');
         navigate('/', { replace: true });
     };
+
+    // Show preloader
+    if (isLoading) {
+        return (
+            <div className="dashboard-preloader-container">
+                <div className="neon-preloader"></div>
+            </div>
+        );
+    }
 
     // Don't render until we have data (prevents flash before redirect)
     if (!problemStatement) return null;
@@ -55,7 +76,7 @@ const Dashboard = () => {
                 className="dashboard-header"
                 initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6 }}
+                transition={{ duration: 0.8 }}
             >
                 <div className="dashboard-badge">
                     <span className="dashboard-badge-dot"></span>
