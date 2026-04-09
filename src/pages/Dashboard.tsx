@@ -50,7 +50,6 @@ const Dashboard = () => {
 
     const handleLogout = () => {
         sessionStorage.clear();
-        localStorage.removeItem('isAuthenticated');
         navigate('/', { replace: true });
     };
 

@@ -13,7 +13,8 @@ const Navbar = () => {
     const location = useLocation();
 
     useEffect(() => {
-        setIsAuth(localStorage.getItem('isAuthenticated') === 'true');
+        // Read auth state from sessionStorage (auto-cleared on tab/window close)
+        setIsAuth(sessionStorage.getItem('isAuthenticated') === 'true');
     }, [location.pathname]);
 
     useEffect(() => {
@@ -98,7 +99,6 @@ const Navbar = () => {
                     {isAuth ? (
                         <button className="register-btn" onClick={() => {
                             sessionStorage.clear();
-                            localStorage.removeItem('isAuthenticated');
                             setIsAuth(false);
                             navigate('/');
                         }} style={{ font: 'inherit', cursor: 'pointer', fontWeight: 'bold' }}>
@@ -142,7 +142,6 @@ const Navbar = () => {
                                 className="register-btn"
                                 onClick={() => {
                                     sessionStorage.clear();
-                                    localStorage.removeItem('isAuthenticated');
                                     setIsAuth(false);
                                     navigate('/');
                                     setIsOpen(false);

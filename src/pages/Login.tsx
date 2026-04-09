@@ -23,17 +23,15 @@ const Login = () => {
             );
 
             if (validUser) {
-                // Store authentication status and team data in sessionStorage
-                // sessionStorage persists only for the browser tab session
+                // Store authentication status and team data in sessionStorage only.
+                // sessionStorage is automatically cleared when the browser tab/window is closed,
+                // which gives us proper auto-logout behaviour for free.
                 sessionStorage.setItem('isAuthenticated', 'true');
                 sessionStorage.setItem('teamEmail', validUser.email);
                 sessionStorage.setItem('teamName', validUser.teamName);
                 sessionStorage.setItem('problemStatement', validUser.problemStatement);
                 sessionStorage.setItem('panel', validUser.panel);
                 sessionStorage.setItem('justLoggedIn', 'true');
-
-                // Also keep localStorage flag for Navbar compatibility
-                localStorage.setItem('isAuthenticated', 'true');
 
                 navigate('/dashboard');
             } else {
