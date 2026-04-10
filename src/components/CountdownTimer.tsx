@@ -42,7 +42,7 @@ const CountdownTimer = () => {
 
     return (
         <div className="countdown-container">
-            <p className="hackathon-begun-text">HACKATHON HAS BEGUN</p>
+            <p className="hackathon-begun-text">HACKING HAS BEGUN</p>
             <div className="countdown-timer">
                 <div className="countdown-box">
                     <span className="countdown-number">{formatTime(timeLeft.days)}</span>
