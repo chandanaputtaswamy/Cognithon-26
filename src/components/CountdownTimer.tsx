@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import '../styles/CountdownTimer.css';
 
 const CountdownTimer = () => {
-    // Target Date: April 10, 2026 10:00:00 AM
-    const targetDate = new Date('2026-04-10T10:00:00').getTime();
+    // Target Date: April 11, 2026 11:19:05 AM (24 hours from restart)
+    const targetDate = new Date('2026-04-11T11:19:05').getTime();
 
     const [timeLeft, setTimeLeft] = useState({
         days: 0,
