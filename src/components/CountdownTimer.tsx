@@ -1,16 +1,44 @@
+import { useState, useEffect } from 'react';
 import '../styles/CountdownTimer.css';
 
-// ⏸ TIMER IS PAUSED — set isPaused = false and update targetDate to resume
-const isPaused = true;
-
 const CountdownTimer = () => {
+    // Target Date: April 11, 2026 11:43:53 AM IST (24 hours from start)
+    const targetDate = new Date('2026-04-11T11:43:53').getTime();
+
+    const [timeLeft, setTimeLeft] = useState({
+        days: 0,
+        hours: 24,
+        minutes: 0,
+        seconds: 0
+    });
+    const [isFinished, setIsFinished] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const now = new Date().getTime();
+            const difference = targetDate - now;
+
+            if (difference > 0) {
+                setTimeLeft({
+                    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+                    hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+                    minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
+                    seconds: Math.floor((difference % (1000 * 60)) / 1000)
+                });
+            } else {
+                clearInterval(interval);
+                setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+                setIsFinished(true);
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
+    }, [targetDate]);
+
     // Helper to format numbers with leading zero
     const formatTime = (time: number) => {
         return time < 10 ? `0${time}` : time;
     };
-
-    // Paused display: frozen at 24:00:00
-    const timeLeft = { days: 0, hours: 24, minutes: 0, seconds: 0 };
 
     return (
         <div className="countdown-container">
@@ -36,9 +64,11 @@ const CountdownTimer = () => {
                     <span className="countdown-label">Seconds</span>
                 </div>
             </div>
+            {isFinished && (
+                <p className="hacking-begins-text">HACKING BEGINS</p>
+            )}
         </div>
     );
 };
 
-export { isPaused };
 export default CountdownTimer;
