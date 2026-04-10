@@ -75,7 +75,7 @@ export const teamCredentials: TeamCredential[] = [
     //team 8
     panel: "Panel 1",
     email: "sanvishetty152006@gmail.com",
-    password: "thehackers'",
+    password: "thehackers",
     teamName: "The 'HACKERS'",
     problemStatement: "Industrial Emission Control: AI & Satellite-Based Monitoring",
   },
