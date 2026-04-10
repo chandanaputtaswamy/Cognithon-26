@@ -12,17 +12,15 @@
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.countdown-title {
-    color: var(--color-secondary);
+.hackathon-begun-text {
+    color: #ffffff;
     font-size: 1.5rem;
     letter-spacing: 4px;
     margin-bottom: 2rem;
     font-family: 'Courier New', Courier, monospace;
     font-weight: 700;
-    text-shadow: 0 0 15px rgba(188, 19, 254, 0.4);
     text-transform: uppercase;
     text-align: center;
-    /* Ensure text is centered properly, especially if it breaks lines */
 }
 
 .countdown-department-title {
