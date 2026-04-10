@@ -81,7 +81,7 @@
 
 .dashboard-title {
   font-family: 'Outfit', sans-serif;
-  font-size: 3.4rem;
+  font-size: clamp(2rem, 8vw, 3.4rem);
   font-weight: 800;
   margin-bottom: 0.6rem;
   background: linear-gradient(135deg, #ffffff 30%, #00f3ff);
@@ -94,16 +94,16 @@
 }
 
 .dashboard-subtitle {
-  font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(1.2rem, 4vw, 1.6rem);
+  color: rgba(255, 255, 255, 0.85);
   letter-spacing: 1px;
   margin-bottom: 0.3rem;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .dashboard-email {
-  font-size: 0.82rem;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: clamp(0.95rem, 3vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.6);
   letter-spacing: 0.5px;
 }
 
@@ -177,7 +177,7 @@
 
 .dashboard-ps-text {
   font-family: 'Outfit', sans-serif;
-  font-size: 1.5rem;
+  font-size: clamp(1.2rem, 5vw, 1.8rem);
   font-weight: 400;
   color: #f0f0f0;
   line-height: 1.7;
@@ -193,8 +193,8 @@
 }
 
 .dashboard-ps-note {
-  font-size: 0.78rem;
-  color: rgba(255, 255, 255, 0.3);
+  font-size: clamp(0.95rem, 3.5vw, 1.15rem);
+  color: rgba(255, 255, 255, 0.6);
   text-align: center;
   display: block;
   letter-spacing: 0.3px;
@@ -236,14 +236,6 @@
     padding: 6rem 1rem 4rem;
   }
 
-  .dashboard-title {
-    font-size: 2.4rem;
-  }
-
-  .dashboard-subtitle {
-    font-size: 1.25rem;
-  }
-
   .dashboard-ps-header {
     padding: 1.25rem 1.5rem;
   }
@@ -257,15 +249,11 @@
   }
 
   .dashboard-ps-text {
-    font-size: 1.35rem;
+    font-size: 1.1rem;
   }
 
   .dashboard-ps-footer {
     padding: 1.25rem 1.5rem;
-  }
-
-  .dashboard-ps-note {
-    font-size: 0.85rem;
   }
 
   .dashboard-logout-btn {
