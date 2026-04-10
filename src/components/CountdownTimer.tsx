@@ -11,6 +11,7 @@ const CountdownTimer = () => {
         minutes: 0,
         seconds: 0
     });
+    const [isFinished, setIsFinished] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -28,6 +29,7 @@ const CountdownTimer = () => {
                 clearInterval(interval);
                 // Timer reached zero
                 setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+                setIsFinished(true);
             }
         }, 1000);
 
@@ -41,7 +43,7 @@ const CountdownTimer = () => {
 
     return (
         <div className="countdown-container">
-            <h3 className="countdown-title">HACKING BEGINS IN</h3>
+            {!isFinished && <h3 className="countdown-title">HACKING BEGINS IN</h3>}
             <div className="countdown-timer">
                 <div className="countdown-box">
                     <span className="countdown-number">{formatTime(timeLeft.days)}</span>
@@ -63,6 +65,9 @@ const CountdownTimer = () => {
                     <span className="countdown-label">Seconds</span>
                 </div>
             </div>
+            {isFinished && (
+                <p className="hacking-begins-text">HACKING BEGINS</p>
+            )}
         </div>
     );
 };

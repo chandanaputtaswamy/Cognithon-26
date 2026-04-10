@@ -86,6 +86,36 @@
     }
 }
 
+.hacking-begins-text {
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    font-weight: 900;
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-align: center;
+    animation: hackingGlow 1.5s ease-in-out infinite;
+}
+
+@keyframes hackingGlow {
+    0%, 100% {
+        text-shadow:
+            0 0 8px #fff,
+            0 0 16px #fff,
+            0 0 30px #fff,
+            0 0 60px rgba(255, 255, 255, 0.6);
+        opacity: 1;
+    }
+    50% {
+        text-shadow:
+            0 0 4px #fff,
+            0 0 10px #fff,
+            0 0 20px rgba(255, 255, 255, 0.4);
+        opacity: 0.85;
+    }
+}
+
 @media (max-width: 1200px) {
     .countdown-wrapper {
         margin: 2rem auto 0;
